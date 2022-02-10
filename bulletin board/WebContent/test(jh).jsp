@@ -14,6 +14,8 @@
 .table {
       border-collapse: collapse;
       border-top: 3px solid #343A40;
+      height: 300px;
+      overflow: scroll;
     }  
     .table th {
       color: #343A40;
@@ -86,6 +88,14 @@ margin: 10px;
 	<tr><th>선택</th><th>No.</th><th>이름</th><th>성별</th><th>작성일</th></tr>
     <tr><td><input type="checkbox"></td><td>1</td><td>아무개</td><td>여</td><td>20xx-xx-xx</td></tr>
     <tr><td><input type="checkbox"><td>2</td><td>홍길노</td><td>남</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>3</td><td>홍길량</td><td>여</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>4</td><td>홍길진</td><td>남</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>3</td><td>홍길량</td><td>여</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>4</td><td>홍길진</td><td>남</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>3</td><td>홍길량</td><td>여</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>4</td><td>홍길진</td><td>남</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>3</td><td>홍길량</td><td>여</td><td>20xx-xx-xx</td></tr>
+    <tr><td><input type="checkbox"><td>4</td><td>홍길진</td><td>남</td><td>20xx-xx-xx</td></tr>
     <tr><td><input type="checkbox"><td>3</td><td>홍길량</td><td>여</td><td>20xx-xx-xx</td></tr>
     <tr><td><input type="checkbox"><td>4</td><td>홍길진</td><td>남</td><td>20xx-xx-xx</td></tr>
   </table> 
