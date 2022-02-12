@@ -65,6 +65,7 @@ margin: 10px;
 <div class="list">
 
 	<legend>최근 게시글</legend>	
+	<a href="#" class="" style="padding-left: 47em">전체보기</a>
 	<table class="table">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
     <tr><td>1</td><td>귀여운 고양이 사진 공유</td><td>관리자</td><td>20xx-xx-xx</td></tr>
