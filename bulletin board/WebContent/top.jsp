@@ -20,7 +20,7 @@
 			<a class="navbar-brand" href="main.jsp">웹페이지</a>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="/etc">홈
+					<li class="nav-item active"><a class="nav-link" href="main.jsp">홈
 							<span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link"
@@ -32,25 +32,4 @@
 		</div>
 	</nav>
 
-	<!-- Page Content -->
-	<div class="container">
-		<div class="row">
-
-			<div class="col-lg-3">
-
-				<h3 class="my-4 text-center">Category</h3>
-				<div class="list-group mb-4">
-					<a class="list-group-item list-group-item-info text-center font-weight-bold">게시판</a>
-					<a href="boardviewer.jsp"
-						class="list-group-item list-group-item-action text-center font-weight-bold">일상
-						공유</a> <a href="#"
-						class="list-group-item list-group-item-action text-center font-weight-bold">코딩
-						공유</a>
-				</div>
-
-			</div>
-			<!-- /.col-lg-3 -->
-
-			<div class="col-lg-9 my-4 mb-4">
-
-				<!-- 여기서부터 본문내용, 이후 코드는 bottomLayout에서 마무리 -->
+	
