@@ -2,18 +2,63 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="top.jsp" %>
+<%@ include file="category2.jsp" %>
+<style type="text/css">
+
+.table {
+      border-collapse: collapse;
+      border-top: 3px solid #343A40;
+    }  
+    .table th {
+      color: #343A40;
+      background: #D6EEF2;
+      text-align: center;
+    }
+    .table th, .table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    .table th:first-child, .table td:first-child {
+      border-left: 0;
+    }
+    .table th:last-child, .table td:last-child {
+      border-right: 0;
+    }
+    .table tr td:first-child{
+      text-align: center;
+    }
+    
+button {
+border: 1.5px solid #343A40;
+width: 150px;
+margin : 10px;
+font-weight: 400;
+color: #343A40;
+padding: 8px 25px; 
+cursor:pointer;
+border-radius:100px;
+}    
+
+form{
+margin : 10px;
+}
+
+fieldset { 
+border: 2px solid #343A40;
+padding: 10px;
+margin: 10px;
+}
+
+</style>
+</head>
+
 <!DOCTYPE>
 
 <html>
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>레퍼런스 웹/앱팀</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 
 <title>게시판 페이지</title>
@@ -36,26 +81,19 @@
 
 <body>
 
-<div class="container">
 
-  <h2>게시판</h2>          
+<div class="list">
 
-  <table class="table table-hover">
+	<legend>일상 공유</legend>	
+	<table class="table">
+	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
+    <tr><td>1</td><td>점메추</td><td>김개똥</td><td>20xx-xx-xx</td></tr>
+    <tr><td>2</td><td>롤 티어 상승!</td><td>김아무개</td><td>20xx-xx-xx</td></tr>
+    <tr><td>3</td><td>기타 연주중</td><td>김씨</td><td>20xx-xx-xx</td></tr>
+    <tr><td>4</td><td>로아에서 키운 내 딸랑구</td><td>김장독</td><td>20xx-xx-xx</td></tr>
+  </table> 
 
-    <thead>
-
-      <tr>
-
-        <th>번호</th>
-
-        <th>제목</th>
-
-        <th>글쓴이</th>
-
-        <th>작성일</th>
-
-      </tr>
-
+	</div>
   <tbody border="1">
 
 
@@ -128,12 +166,10 @@
 
 		</article>
 
-	</form>>
-    
-  <a href="boradwrite.jsp" class="btn btn-primary pull-right">글쓰기</a>
+	</form>>  
 
+<button type="button" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
 </div>
 
 </body>
 </html>
- <jsp:include page = "bottom.jsp" flush = "false"/>
