@@ -2,8 +2,8 @@
 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<title>main</title>
 <body>
-	
 <!-- top 레이아웃 include -->
 <jsp:include page = "top.jsp" flush = "false"/>
 <jsp:include page = "category.jsp" flush = "false"/>
