@@ -10,17 +10,6 @@
 <link href="./css/manageform_css.css" type="text/css" rel="stylesheet">
 </head>
 
-<SCRIPT language="JavaScript">
-	function popup() {
-
-		var url = "manage_pop.jsp";
-
-		var name = "회원 정보";
-
-		window.open(url,name,"width=300,height=100,toolbar=no,status=no,location=no,scrollbars=no,menubar=no,resizable=no,left=1100 top=70");
-
-	}
-</script>
 <!-- 네비바를 fixed-top으로 설정했을 때 컨텐츠와 겹치는 문제 방지 -->
 <body class="pt-5">
 
@@ -33,10 +22,6 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="main.jsp">홈 <span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item active"><a class="nav-link pop"
-						onclick="popup()">관리자 정보<span class="sr-only">(current)</span> 
-					</a></li>
-					
 				</ul>
 			</div>
 		</div>
