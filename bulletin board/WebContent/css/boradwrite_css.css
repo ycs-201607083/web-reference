@@ -52,7 +52,9 @@ textarea {
 	border: none;
 	resize: none;
 }
-
+.radius{
+	border-radius: 100px;
+}
 .title {
 	background: #D6EEF2;
 }

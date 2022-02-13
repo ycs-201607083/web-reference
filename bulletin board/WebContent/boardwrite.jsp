@@ -43,8 +43,8 @@
     <tr><td>내용</td><td><textarea  placeholder="내용을 입력하세요." cols = "80" rows = "20" ></textarea></td></tr>
   </table> 
   </fieldset>
- 	<button type="button" class="mem_ok" value="게시글 작성">게시글 작성</button>
-	<button type="button" class="mem_no" value="취소">취소</button>
+ 	<button type="button" class="radius" value="게시글 작성">게시글 작성</button>
+	<button type="button" class="radius" value="취소">취소</button>
   
 </body>
 </html>
