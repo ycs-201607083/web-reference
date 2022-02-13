@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 	<% 
 	// 관리자 전용 ID/PW
-	String MasterID = application.getInitParameter("MasterID");
-	String MasterPW = application.getInitParameter("MasterPassword");
-    String MasterName = application.getInitParameter("MasterName");
+	String MasterID = (String)application.getInitParameter("MasterID");
+	String MasterPW = (String)application.getInitParameter("MasterPassword");
+    String MasterName = (String)application.getInitParameter("MasterName");
     
     // login.jsp에서 POST로 받아온 값
-    String id = request.getParameter("userID");
-    String pw = request.getParameter("userPassword");
+    String id = request.getParameter("id");
+    String pw = request.getParameter("pw");
     
+    // DB에서 id에 맞는 정보들을 가져온 값
     String SelectID = null;
     String SelectPW = null;
     String Name = null;
@@ -57,8 +59,8 @@
     // 로그인 결과 처리 ( 로그인 성공시 세션 처리 )
     if (id.equals(MasterID) && pw.equals(MasterPW)) // 관리자 로그인시
     {
-    	session.setAttribute("MLoginID", id);   // 로그인 성공을 나타내는 특정 속성 설정
-        session.setAttribute("MName" , Name);
+    	session.setAttribute("MLoginID", MasterID);   // 로그인 성공을 나타내는 특정 속성 설정
+        session.setAttribute("MName" , MasterName);
 %>
 <script>
 	alert("관리자로 로그인 되었습니다.");

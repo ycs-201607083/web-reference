@@ -17,7 +17,7 @@
  	
  	<context-param>
  		<param-name>MasterPassword</param-name>
- 		<param-value>admin1234</param-value>
+ 		<param-value>1234</param-value>
  	</context-param>
  	
  	<context-param>
