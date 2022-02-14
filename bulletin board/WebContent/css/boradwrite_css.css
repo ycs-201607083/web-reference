@@ -52,11 +52,20 @@ textarea {
 	border: none;
 	resize: none;
 }
-.radius{
+
+.btn1 {
 	border-radius: 100px;
+	margin-bottom:20px;
+	margin-right:10px;
+	float:right;
 }
+
 .title {
 	background: #D6EEF2;
+}
+
+.mar{
+	margin-bottom:10px;
 }
 
 /* </style> */

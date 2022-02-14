@@ -25,26 +25,30 @@
 	</nav>
 		
 		<br>
-		
+
 	<fieldset>
-	<legend>게시글 작성</legend>
-	<table class="table">
-	<tr><th>제목</th><th><textarea class = "title" id = "title" placeholder="제목을 입력해주세요." rows = "2">	</textarea>
-	<form action="main.jsp" method="post">
-	<select name="kind">
-	<option value = "none">게시판 종류 선택</option>
+	<h3>게시글 작성</h3>
+	<hr>
+	<div class = "mar">
+<select name="kind">
+	<option value = "none">게시할 게시판을 선택해주세요.</option>
+	<option value = "team">전체</option>
 	<option value = "web">웹/앱</option>
 	<option value = "game">게임</option>
 	<option value = "net">네트워크</option>
 	<option value = "ai">인공지능</option>
 	</select>
+</div>
+	<table class="table">
+	<tr><th>제목</th><th><textarea class = "title" id = "title" placeholder= "제목을 입력해주세요." rows= "1"></textarea>
+	<form action="main.jsp" method="post">
 </th></tr>
 	
     <tr><td>내용</td><td><textarea  placeholder="내용을 입력하세요." cols = "80" rows = "20" ></textarea></td></tr>
   </table> 
   </fieldset>
- 	<button type="button" class="radius" value="게시글 작성">게시글 작성</button>
-	<button type="button" class="radius" value="취소">취소</button>
+ 	<button type="button" class="btn1" value="게시글 작성">게시글 작성</button>
+	<button type="button" class="btn1" value="취소">취소</button>
   
 </body>
 </html>
