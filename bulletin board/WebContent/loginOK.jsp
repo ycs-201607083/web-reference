@@ -16,6 +16,7 @@
     String SelectID = null;
     String SelectPW = null;
     String Name = null;
+    String subcheck = null;
     
     // DB연결
     Connection conn=null;
@@ -30,7 +31,7 @@
     conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
     
     // SQL문으로 DB내에서 로그인하려는 ID와 PW 이름 검색
-    String sql = "select id, passwd, name from member where id = ?";
+    String sql = "select id, password, name, subcheck from member where id = ?";
     pstmt = conn.prepareStatement(sql);
     pstmt.setString(1, id);
     ResultSet result = pstmt.executeQuery();
@@ -39,8 +40,9 @@
     while(result.next())
     {
     	SelectID = result.getString("id");
-    	SelectPW = result.getString("passwd");
+    	SelectPW = result.getString("password");
     	Name = result.getString("name");
+    	subcheck = result.getString("subcheck");
     }
     
     // 에러 처리
@@ -68,7 +70,7 @@
 </script>
 <%
     }
-    else if(id.equals(SelectID) && pw.equals(SelectPW)) //아이디와 패스워드 모두 일치
+    else if(id.equals(SelectID) && pw.equals(SelectPW) && subcheck == "O") //아이디와 패스워드 모두 일치
     {  
      	session.setAttribute("LoginID", id);   // 로그인 성공을 나타내는 특정 속성 설정
      	session.setAttribute("Name" , Name);
@@ -78,7 +80,17 @@
 	location.href="main.jsp";
 </script>
 <%
-	} else if (id.equals(SelectID)){
+	} 
+    else if (id.equals(SelectID) && pw.equals(SelectPW) && subcheck == "X")
+	{
+%>
+<script>
+	alert("승인 되지 않은 사용자입니다.");
+	location.href="main.jsp";
+</script>
+<%
+	}
+	else if (id.equals(SelectID)){
 %>
 <script>
 alert("패스워드가 다릅니다.");

@@ -55,7 +55,7 @@
 						<input type="text" name="name" placeholder="이름" />
 					</div>
 					<div class="col-12">
-						<input type="text" name="address" placeholder="학번" />
+						<input type="text" name="stdID" placeholder="학번" />
 					</div>
 						<div class="col-12">
 						 <input type="text" name="userEmail" placeholder="이메일@naver.com" maxlength="20">
