@@ -1,5 +1,5 @@
 create table member(
-	stdid int(20) not null primary key,
+	stdid int(20) primary key,
 	id varchar(20) not null,
 	passwd varchar(30) not null,
 	name varchar(20) not null,
