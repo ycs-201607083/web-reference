@@ -66,7 +66,7 @@
 %>
 <script>
 	alert("관리자로 로그인 되었습니다.");
-	location.href="main.jsp";
+	location.href="joinOK.jsp";
 </script>
 <%
     }

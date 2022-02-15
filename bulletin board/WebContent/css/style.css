@@ -1,0 +1,39 @@
+/*v2*/ 
+*{ 
+	margin:0; 
+	padding:0; 
+	list-style:none; 
+	font-family:"malgun gothic"; 
+	box-sizing:border-box; 
+	}
+
+a{text-decoration:none;color:inherit;}
+
+#nav-v2{
+	
+	width:255px;
+	text-align:center;
+	color: #ffffff
+} 
+.menu-v2{ 
+	line-height:2;
+	border:1px solid #ffffff; 
+	position:relative; 
+} 
+.menu-v2 .submenu{ 
+	position:absolute; 
+	width:200px; 
+	left:240px; 
+	border:1px solid #ffffff; 
+	background-color: #b6e2e9; 
+	color:white; 
+	top:1px; 
+	display:none; 
+	} 
+.menu-v2:hover{ 
+	background-color: #b6e2e9; 
+	color:#ffffff; 
+	} 
+.menu-v2 .submenu>li:hover{ 
+	background-color:#BEE5EB; 
+	color:rgb(0, 128, 192); }

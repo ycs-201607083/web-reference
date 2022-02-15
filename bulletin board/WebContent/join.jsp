@@ -13,18 +13,18 @@
         // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
         function checkValue()
         {
-            if(!document.userInfo.userID.value){
+            if(!document.userInfo.id.value){
                 alert("아이디를 입력하세요.");
                 return false;
             }
             
-            if(!document.userInfo.userPassword.value){
+            if(!document.userInfo.pw.value){
                 alert("비밀번호를 입력하세요.");
                 return false;
             }
             
             // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-            if(document.userInfo.userPassword.value != document.userInfo.userPassword_check.value ){
+            if(document.userInfo.pw.value != document.userInfo.pw_check.value ){
                 alert("비밀번호를 동일하게 입력하세요.");
                 return false;
             }
@@ -40,16 +40,16 @@
 			<header class="major">
 				<h2>회원가입</h2>
 			</header>
-			<form action="joinOK.jsp" method="post" name="reg_frm">
+			<form action="login.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
 				<div class="row gtr-uniform">
 					<div class="col-12">
-						<input type="text" name="userID" placeholder="아이디" />
+						<input type="text" name="id" placeholder="아이디" />
 					</div>
 					<div class="col-12">
-						<input type="password" name="userPassword" placeholder="비밀번호" />
+						<input type="password" name="pw" placeholder="비밀번호" />
 					</div>
 					<div class="col-12">
-						<input type="password" name="userPassword_check" placeholder="비밀번호 재확인" />
+						<input type="password" name="pw_check" placeholder="비밀번호 재확인" />
 					</div>
 					<div class="col-12">
 						<input type="text" name="name" placeholder="이름" />
