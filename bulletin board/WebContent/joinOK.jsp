@@ -13,7 +13,7 @@
 <%
 String stdid = request.getParameter("stdID");			// 학번
 String name = request.getParameter("name");				// 이름
-String subcheck = "X";
+String signcheck = "X";
 String id = request.getParameter("userID");				// ID
 String passwd = request.getParameter("userPassword");	// PW
 String email = request.getParameter("userEmail");		// EMAIL
@@ -36,12 +36,12 @@ try{
     String sql = "insert into member values(?,?,?,?,?,?,?)";
     pstmt = conn.prepareStatement(sql);
     pstmt.setString(1, stdid);
-    pstmt.setString(2, name);
-    pstmt.setString(3, subcheck);
-    pstmt.setString(4, id);
-    pstmt.setString(5, passwd);
-    pstmt.setString(6, email);
-    pstmt.setString(7, register)
+    pstmt.setString(2, id);
+    pstmt.setString(3, passwd);
+    pstmt.setString(4, name);
+    pstmt.setString(5, email);
+    pstmt.setString(6, signcheck);
+    pstmt.setTimestamp(7, register);
     pstmt.executeUpdate();
 %>
 	<script>
@@ -64,12 +64,3 @@ try{
         try{conn.close();}catch(SQLException sqle){}
 }
 %>
-=======
-<jsp:include page = "top2.jsp" flush = "false"/>
-<jsp:include page = "info.jsp" flush = "false"/>
-<jsp:include page = "category.jsp" flush = "false"/>
-<jsp:include page = "notice.jsp" flush = "false"/>
-<jsp:include page = "newpost.jsp" flush = "false"/>	
->>>>>>> branch 'main' of http://github.com/ycs-201607083/web-reference
-</body>
-</html>

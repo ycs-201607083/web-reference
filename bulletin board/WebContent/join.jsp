@@ -40,7 +40,7 @@
 			<header class="major">
 				<h2>회원가입</h2>
 			</header>
-			<form action="login.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
+			<form action="joinOK.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
 				<div class="row gtr-uniform">
 					<div class="col-12">
 						<input type="text" name="id" placeholder="아이디" />

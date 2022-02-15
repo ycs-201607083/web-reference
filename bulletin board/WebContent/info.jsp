@@ -14,6 +14,7 @@
 				<div class="list-group mb-4">
 					<a class="list-group-item list-group-item-info text-center font-weight-bold">개인 정보</a>
 					<a class="list-group-item list-group-item-action text-center font-weight-bold">
+					
 					학번: 202007xxx<br>
 					이름: 김아무개  <br>
 					</a>
