@@ -52,13 +52,14 @@
 							conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 
 							// SQL문으로 DB내에서 로그인하려는 ID와 PW 이름 검색
-							String sql = "select stdid, name, id, sign_date from member where subcheck = 'X'";
+							String sql = "select stdid, name, id, sign_date from member where signcheck = 'X'";
 							pstmt = conn.prepareStatement(sql);
 							ResultSet result = pstmt.executeQuery();
 
 							// 결과 레코드 하나씩마다 ID PW 이름 변수에 입력
 							while (result.next()) {
 								StdID = result.getString("stdid");
+								ID = result.getString("id");
 								Name = result.getString("name");
 								date = result.getString("sign_date");
 						%>
