@@ -8,14 +8,12 @@
 <title> Insert title here </title>
 </head>
 <body>
-<<<<<<< HEAD
-
 <%
 String stdid = request.getParameter("stdID");			// 학번
 String name = request.getParameter("name");				// 이름
 String signcheck = "X";
-String id = request.getParameter("id");				// ID
-String passwd = request.getParameter("pw");	// PW
+String id = request.getParameter("id");					// ID
+String passwd = request.getParameter("pw");				// PW
 String email = request.getParameter("userEmail");		// EMAIL
 %>
 <%
