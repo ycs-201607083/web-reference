@@ -9,7 +9,7 @@ create table member(
 ) charset = 'utf8';
 
 create table board(
-	boardid int not null primary key,
+	boardid int AUTO_INCREMENT primary key,
 	title varchar(50) not null,
 	boardtype varchar(30) not null,
 	writer varchar(50),
