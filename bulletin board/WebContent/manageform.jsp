@@ -9,23 +9,9 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link href="./css/manageform_css.css" type="text/css" rel="stylesheet">
 </head>
+<jsp:include page = "top2.jsp" flush = "false"/>
 
-<!-- 네비바를 fixed-top으로 설정했을 때 컨텐츠와 겹치는 문제 방지 -->
-<body class="pt-5">
-
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<div class="container">
-			<a class="navbar-brand" href="main.jsp">Reference</a>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="main.jsp">홈 <span class="sr-only">(current)</span>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<br><br>
 
 	<form method="get" action=''>
 		<!-- 회원관리 게시판, 승인제, 승인불가 기능 -->

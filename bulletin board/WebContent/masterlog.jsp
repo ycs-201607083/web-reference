@@ -9,8 +9,8 @@
 <body>
 <jsp:include page = "top2.jsp" flush = "false"/>
 <jsp:include page = "info.jsp" flush = "false"/>
-<jsp:include page = "category.jsp" flush = "false"/>
 <jsp:include page = "notice.jsp" flush = "false"/>
+<jsp:include page = "category.jsp" flush = "false"/>
 <jsp:include page = "newpost.jsp" flush = "false"/>	
 </body>
 </html>

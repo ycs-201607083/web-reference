@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%--개인정보를 확인하는 부분 --%>
 <jsp:include page = "top2.jsp" flush = "false"/>
-<jsp:include page = "info.jsp" flush = "false"/>
-<jsp:include page = "category.jsp" flush = "false"/>
-<jsp:include page = "notice.jsp" flush = "false"/>
-<jsp:include page = "newpost.jsp" flush = "false"/>	
 </body>
 </html>

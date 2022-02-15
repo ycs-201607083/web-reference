@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page = "top2.jsp" flush = "false"/>
-<jsp:include page = "info.jsp" flush = "false"/>
+<jsp:include page = "top.jsp" flush = "false"/>
+<br><br>
 <jsp:include page = "category.jsp" flush = "false"/>
 <jsp:include page = "notice.jsp" flush = "false"/>
-<jsp:include page = "newpost.jsp" flush = "false"/>	
 </body>
 </html>

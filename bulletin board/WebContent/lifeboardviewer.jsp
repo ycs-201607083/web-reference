@@ -2,9 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="top.jsp" %>
-<%@ include file="category2.jsp" %>
-<style type="text/css">
+<br><br>
+<%@ include file="category.jsp" %>
 
+<style type="text/css">
 .table {
       border-collapse: collapse;
       border-top: 3px solid #343A40;
@@ -29,15 +30,22 @@
     }
     
 button {
-border: 1.5px solid #343A40;
-width: 150px;
-margin : 10px;
-font-weight: 400;
-color: #343A40;
-padding: 8px 25px; 
-cursor:pointer;
-border-radius:100px;
-}    
+	border: 1.5px solid #343A40;
+	width: 150px;
+	margin: 10px;
+	font-weight: 400;
+	color: #343A40;
+	padding: 8px 25px;
+	cursor: pointer;
+	border-radius: 100px;
+} 
+
+.btn1 {
+	border-radius: 100px;
+	margin-bottom:20px;
+	margin-right:10px;
+	float:right;
+}
 
 form{
 margin : 10px;
@@ -48,7 +56,12 @@ border: 2px solid #343A40;
 padding: 10px;
 margin: 10px;
 }
+<!-- 링크를 달때쓰는 태그들을 검은색으로 만들고 밑줄이 그어지지 않게 스타일 설정 -->
+a, a:hover {
 
+	text-decoration: none;
+
+	}
 </style>
 </head>
 
@@ -63,19 +76,6 @@ margin: 10px;
 
 <title>게시판 페이지</title>
 
-<!-- 링크를 달때쓰는 태그들을 검은색으로 만들고 밑줄이 그어지지 않게 스타일 설정 -->
-
-<style type="text/css">
-
-	a, a:hover {
-
-		color: #000000;
-
-		text-decoration: none;
-
-	}
-
-</style>
 
 </head>
 
@@ -94,82 +94,8 @@ margin: 10px;
   </table> 
 
 	</div>
-  <tbody border="1">
 
-
-					<%
-
-						Connection conn=null;
-						PreparedStatement pstmt = null;
-
-						String jdbc_driver = "com.mysql.cj.jdbc.Driver";
-						String jdbc_url = "jdbc:mysql://localhost/yangjung?serverTimezone=UTC";
-
-						try {
-							Class.forName(jdbc_driver);
-
-							conn = DriverManager.getConnection(jdbc_url, "root", "jsp2021");
-
-							String sql2 = "select * from board";
-							pstmt = conn.prepareStatement(sql2);
-							ResultSet rs = pstmt.executeQuery();
-
-							while (rs.next()) {
-					%>
-					<tr>
-						<!-- 받아온 값들을 해당 테이블에 넣기 위한 반복문 -->
-						<td>
-							<%
-								out.print(rs.getString(1));
-							%>
-						</td>
-						<td>
-							<%
-								out.print(rs.getString(2));
-							%>
-						</td>
-						<td>
-							<%
-								out.print(rs.getString(3));
-							%>
-						</td>
-						<td>
-							<%
-								out.print(rs.getString(4));
-							%>
-						</td>
-						
-					</tr>
-
-					<%
-						}
-
-							rs.close();
-							pstmt.close();
-							conn.close();
-
-						} catch (Exception e) {
-							System.out.println(e);
-						}
-					%>
-
-
-				</tbody>
-
-
-				<tfoot>
-
-				</tfoot>
-
-
-			</table>
-
-		</article>
-
-	</form>>  
-
-<button type="button" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
-</div>
+	<button type="button" class="btn1"  onclick="location.href='boardwrite.jsp'">게시글 작성</button>
 
 </body>
 </html>

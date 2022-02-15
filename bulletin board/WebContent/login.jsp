@@ -7,14 +7,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Login Page</title>
+ <script type="text/javascript">
+    
+        function checkValue()
+        {
+            inputForm = eval("document.loginInfo");
+            if(!inputForm.id.value)
+            {
+                alert("아이디를 입력하세요");    
+                inputForm.id.focus();
+                return false;
+            }
+            if(!inputForm.pw.value)
+            {
+                alert("비밀번호를 입력하세요");    
+                inputForm.pw.focus();
+                return false;
+            }
+        }
+    
+    </script>
+ 
+ 
 </head>
 <body>
+
 	<section id="footer">
 		<div class="container">
 			<header class="major">
 				<h2>로그인</h2>
 			</header>
-			<form action="loginOK.jsp" method="post">
+			<form action="loginOK.jsp" method="post"  onsubmit="return checkValue()" name="loginInfo">
 				<div class="row gtr-uniform">
 					<h4>ID</h4>
 					<div class="col-12">

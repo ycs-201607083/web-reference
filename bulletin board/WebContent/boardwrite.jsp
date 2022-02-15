@@ -13,17 +13,7 @@
 <body class="pt-5">
 
 <!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<div class="container">
-			<a class="navbar-brand" href="main.jsp">Reference</a>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-				</ul>
-			</div>
-		</div>
-	</nav>
-		
+<jsp:include page = "top2.jsp" flush = "false"/>		
 		<br>
 
 	<fieldset>
@@ -41,14 +31,14 @@
 </div>
 	<table class="table">
 	<tr><th>제목</th><th><textarea class = "title" id = "title" placeholder= "제목을 입력해주세요." rows= "1"></textarea>
-	<form action="main.jsp" method="post">
+
 </th></tr>
 	
     <tr><td>내용</td><td><textarea  placeholder="내용을 입력하세요." cols = "80" rows = "20" ></textarea></td></tr>
   </table> 
   </fieldset>
- 	<button type="button" class="btn1" value="게시글 작성">게시글 작성</button>
-	<button type="button" class="btn1" value="취소">취소</button>
+	<button type="button" class="btn1" onclick="location.href='#'">게시글 작성</button>
+	<button type="button" class="btn1" onclick="javascript:history.back()">취소</button>
   
 </body>
 </html>
