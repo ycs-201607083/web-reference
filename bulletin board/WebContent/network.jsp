@@ -81,10 +81,7 @@ a, a:hover {
 </head>
 
 <body>
-
-
 <div class="list">
-
 	<legend>네트워크 팀 게시판</legend>	
 	<table class="table">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>

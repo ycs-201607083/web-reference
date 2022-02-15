@@ -17,3 +17,4 @@ create table board(
 	wrcontent varchar(500) NOT NULL
 ) charset = 'utf8';
  
+update member set signcheck = 'O' where id = 'geun10121';
