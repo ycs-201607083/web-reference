@@ -38,7 +38,7 @@ try{
 	pstmt.executeUpdate();
 	%>
 	<script>
-	location.href="AI.jsp";
+	location.href="AI.jsp?kind=<%=kind%>";
 	</script>
 <%
 }finally{

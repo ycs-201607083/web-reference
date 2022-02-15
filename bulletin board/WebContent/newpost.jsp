@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,9 +68,56 @@ margin: 10px;
 	<legend>최근 게시글</legend>	
 	<table class="table">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
-    <tr><td>1</td><td>귀여운 고양이 사진 공유</td><td>관리자</td><td>20xx-xx-xx</td></tr>
-    <tr><td>2</td><td>사이트 이용 규칙</td><td>관리자</td><td>20xx-xx-xx</td></tr>
-    <tr><td>3</td><td>계산기 공유합니다</td><td>관리자</td><td>20xx-xx-xx</td></tr>
+    <%
+    String b_num = null; //게시글 번호
+    String b_title = null; //게시글 제목
+    String b_writer = null; //게시글 작성자
+    String b_date = null; //게시글 날짜
+    
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    try{
+    	String jdbcUrl = "jdbc:mysql://localhost:3306/web_ref_db?useUnicode=yes&characterEncoding=UTF8";
+		String dbId = "admin";
+		String dbPass = "password";
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
+		
+		//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
+		String sql = "select boardid, title, boardtype, writer, wrdate from board order by boardid desc limit 5";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		
+		//각각의 결과 레코드를 변수에 입력
+		while(rs.next()){
+			b_num = rs.getString("boardid");
+			b_title = rs.getString("title");
+			b_writer = rs.getString("writer");
+			b_date = rs.getString("wrdate");
+			%>
+		<tr><td><%=b_num%></td>
+		<td><%=b_title%></td>
+		<td><%=b_writer%></td>
+		<td><%=b_date%></td></tr>
+		<%
+		}
+    }catch(SQLException ex){
+    	ex.printStackTrace();
+    } finally {
+		if (pstmt != null)
+		try {
+			pstmt.close();
+		} catch (SQLException sqle) {
+		}
+
+		if (conn != null)
+		try {
+			conn.close();
+		} catch (SQLException sqle) {
+		}
+		}
+    %>
   </table> 
 </div>
 </body>

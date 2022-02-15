@@ -82,16 +82,94 @@ a, a:hover {
 
 <body>
 
+<%
+String kind = (String)request.getParameter("kind");
+String name = "";
+
+switch(kind){
+
+case "web" :
+	name = "웹/앱 팀";
+	break;
+case "ai" :
+	name = "인공지능 팀";
+	break;
+case "net" :
+	name = "네트워크 팀";
+	break;
+case "game" :
+	name = "게임 팀";
+	break;
+case "daily" :
+	name = "일상 공유";
+	break;
+case "code" :
+	name = "코드 공유";
+	break;
+case "manager" :
+	name = "관리자";
+	break;
+}
+%>
 
 <div class="list">
 
-	<legend>인공지능 팀 게시판</legend>	
+	<legend> <%=name %> 게시판</legend>	
 	<table class="table">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
-    <tr><td>1</td><td>성적계산기</td><td>김개똥</td><td>20xx-xx-xx</td></tr>
-    <tr><td>2</td><td>계산기 프로그램</td><td>김아무개</td><td>20xx-xx-xx</td></tr>
-    <tr><td>3</td><td>자바스크립트 과제</td><td>김씨</td><td>20xx-xx-xx</td></tr>
-    <tr><td>4</td><td>게임 개발 코딩 일지</td><td>김장독</td><td>20xx-xx-xx</td></tr>
+    
+    <%
+    String b_num = null; //게시글 번호
+    String b_title = null; //게시글 제목
+    String b_writer = null; //게시글 작성자
+    String b_date = null; //게시글 날짜
+    
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    try{
+    	String jdbcUrl = "jdbc:mysql://localhost:3306/web_ref_db?useUnicode=yes&characterEncoding=UTF8";
+		String dbId = "admin";
+		String dbPass = "password";
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
+		
+		//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
+		String sql = "select boardid, title, boardtype, writer, wrdate from board where boardtype=? order by boardid desc limit 10";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, kind);
+		rs = pstmt.executeQuery();
+		
+		//각각의 결과 레코드를 변수에 입력
+		while(rs.next()){
+			b_num = rs.getString("boardid");
+			b_title = rs.getString("title");
+			b_writer = rs.getString("writer");
+			b_date = rs.getString("wrdate");
+			%>
+		<tr><td><%=b_num%></td>
+		<td><%=b_title%></td>
+		<td><%=b_writer%></td>
+		<td><%=b_date%></td></tr>
+		<%
+		}
+    }catch(SQLException ex){
+    	ex.printStackTrace();
+    } finally {
+		if (pstmt != null)
+		try {
+			pstmt.close();
+		} catch (SQLException sqle) {
+		}
+
+		if (conn != null)
+		try {
+			conn.close();
+		} catch (SQLException sqle) {
+		}
+		}
+    %>
+    
   </table> 
 </div>
  
