@@ -112,26 +112,26 @@
           
                 <a href="#account" class="btn"><i class="fas fa-user-circle"></i>팀 게시판</a>
                 <div class="subMenu">
-                    <a href="web_app.jsp">웹/앱</a>
-                    <a href="game.jsp">게임</a>
-                    <a href="AI.jsp">인공지능</a>
-                    <a href="network.jsp">네트워크</a>
+                    <a href="AI.jsp?kind=web">웹/앱</a>
+                    <a href="AI.jsp?kind=game">게임</a>
+                    <a href="AI.jsp?kind=ai">인공지능</a>
+                    <a href="AI.jsp?kind=net">네트워크</a>
                 </div>
             </li>
             <li class="item" id="about">
                 <a href="#about" class="btn"><i class="fas fa-address-card"></i>공유</a>
                 <div class="subMenu">
-                    <a href="lifeboardviewer.jsp">일상 공유</a>
-                    <a href="codeboardviewer.jsp">코딩 공유</a>
+                    <a href="AI.jsp?kind=daily">일상 공유</a>
+                    <a href="AI.jsp?kind=code">코딩 공유</a>
                 </div>
             </li>
             <li class="item">
-                <a href="bignotice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
+                <a href="notice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
             </li>
             <li class="item" id="support">
                 <a href="#support" class="btn"><i class="fas fa-info"></i>Support</a>
                 <div class="subMenu">
-                    <a href="manageform.jsp">관리자 게시판</a>
+                    <a href="AI.jsp?kind=manager">관리자 게시판</a>
                 </div>
             </li>
            
