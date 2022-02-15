@@ -20,7 +20,7 @@
 		<div class="list">
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
-				<div height=200vh overflow-y= scroll>
+				<div height=200vh overflow-y= scroll overflow-x= auto>
 					<table class="table text-center" >
 						<tr height=20px;>
 							<th>선택</th>

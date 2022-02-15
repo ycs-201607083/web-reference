@@ -14,14 +14,10 @@
 				<div class="list-group mb-4">
 					<a class="list-group-item list-group-item-info text-center font-weight-bold">개인 정보</a>
 					<a class="list-group-item list-group-item-action text-center font-weight-bold">
-					<%
-					if(){
-				 	%>
+					
 					학번: <% request.getParameter("StdID"); %><br>
 					<% request.getParameter("Name"); %>(<% request.getParameter("LoginID"); %>)  <br>
-					<%
-					}
-				 	%>
+					
 					</a>
 				</div>
 			</div>
