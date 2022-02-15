@@ -1,6 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +23,12 @@
 					<li class="nav-item active"><a class="nav-link" href="main.jsp">홈
 							<span class="sr-only">(current)</span>
 					</a></li>
+					<% if(session.isNew()){%>
 					<li class="nav-item"><a class="nav-link"
 						href="login.jsp">로그인</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="join.jsp">회원가입</a></li>
+					<% }%>
 				</ul>
 			</div>
 		</div>
