@@ -153,6 +153,30 @@
 							<td>KingA</td>
 							<td>20xx-xx-xx</td>
 						</tr>
+																		<tr height=30px>
+							<td><input type="checkbox">
+							<td>4</td>
+							<td>202007004</td>
+							<td>아이고난</td>
+							<td>gonan</td>
+							<td>20xx-xx-xx</td>
+						</tr>
+												<tr height=30px>
+							<td><input type="checkbox">
+							<td>5</td>
+							<td>202007005</td>
+							<td>좋았따~</td>
+							<td>goood</td>
+							<td>20xx-xx-xx</td>
+						</tr>
+												<tr height=30px>
+							<td><input type="checkbox">
+							<td>6</td>
+							<td>202007006</td>
+							<td>킹아</td>
+							<td>KingA</td>
+							<td>20xx-xx-xx</td>
+						</tr>
 						<tr>
 						</tr>
 					</table>
