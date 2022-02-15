@@ -31,7 +31,15 @@
 	}
 </script>
 <body class="pt-5">
-
+<%
+String name = (String)session.getAttribute("Name");
+if(name == null){
+	%>
+<script>
+	alert("로그인 후 이용 가능합니다.");
+	location.href = "login.jsp";
+</script>
+<%} %>
 <!-- Navigation -->
 <jsp:include page = "top2.jsp" flush = "false"/>		
 		<br>
@@ -42,11 +50,13 @@
 	<div class = "mar">
 	<select name="kind">
 	<option value = "none">게시할 게시판을 선택해주세요.</option>
-	<option value = "team">전체</option>
 	<option value = "web">웹/앱</option>
 	<option value = "game">게임</option>
 	<option value = "net">네트워크</option>
 	<option value = "ai">인공지능</option>
+	<option value = "daily">일상 공유</option>
+	<option value = "code">코딩 공유</option>
+	<option value = "manger">관리자 게시판</option>
 	</select>
 	</div>
 	<table class="table">

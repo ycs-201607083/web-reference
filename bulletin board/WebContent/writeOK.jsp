@@ -22,7 +22,7 @@ PreparedStatement pstmt = null;
 String str = "";
 String prnM = null;
 try{
-	String jdbcUrl = "jdbc:mysql://localhost:3306/web_ref_db?useUnicode=yes&characterEncodng=UTF=8";
+	String jdbcUrl = "jdbc:mysql://localhost:3306/web_ref_db?useUnicode=yes&characterEncoding=UTF8";
 	String dbId = "admin";
 	String dbPass="password";
 	Class.forName("com.mysql.jdbc.Driver");
@@ -38,7 +38,7 @@ try{
 	pstmt.executeUpdate();
 	%>
 	<script>
-	location.href="notice.jsp";
+	location.href="AI.jsp";
 	</script>
 <%
 }finally{
