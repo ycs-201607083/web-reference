@@ -139,7 +139,7 @@
 							<td>KingA</td>
 							<td>20xx-xx-xx</td>
 						</tr>
-																		<tr height=30px>
+						<tr height=30px>
 							<td><input type="checkbox">
 							<td>4</td>
 							<td>202007004</td>
