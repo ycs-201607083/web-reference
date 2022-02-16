@@ -15,6 +15,7 @@ String kind = request.getParameter("kind");
 String title = request.getParameter("title");
 String content = request.getParameter("content");
 String name = (String)session.getAttribute("Name");
+Timestamp register = new Timestamp(System.currentTimeMillis());
 
 //DB연결
 Connection conn = null;
@@ -29,12 +30,13 @@ try{
 	conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	
 	//SQL문으로 게시글 내용 및 날짜 등 DB에 입력
-	String sql = "insert into board(title,boardtype,writer,wrcontent) values(?,?,?,?)";
+	String sql = "insert into board(title,boardtype,writer,wrdate,wrcontent) values(?,?,?,?,?)";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1,title);
 	pstmt.setString(2,kind);
 	pstmt.setString(3,name);
-	pstmt.setString(4,content);
+	pstmt.setTimestamp(4, register);
+	pstmt.setString(5,content);
 	pstmt.executeUpdate();
 	%>
 	<script>
