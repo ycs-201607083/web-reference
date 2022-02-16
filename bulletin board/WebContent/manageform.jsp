@@ -21,6 +21,7 @@
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
 				<div height=200vh overflow-y= scroll overflow-x= auto>
+				<form action = "week7.jsp" method="post" name="textform">
 					<table class="table text-center" >
 						<tr height=20px;>
 							<th>선택</th>
@@ -102,8 +103,8 @@
 
 		<br>
 		<div style="display: flex; justify-content: center; align-items: center;">
-			<button type="button" class="mem_ok" value="승인" onsubmit="memok.jsp">승인</button>
-			<button type="button" class="mem_no" value="거절">거절</button>
+			<button type="button" class="mem_ok" value="승인" onclick="location.href = 'memok.jsp'">승인</button>
+			<button type="button" class="mem_no" value="거절" onclick="location.href = 'memno.jsp'">거절</button>
 		</div>
 		<hr>
 
