@@ -33,10 +33,7 @@
                 </div>
             </li>
            
-            <li class="item" id="support">
-                <a href="AI.jsp?kind=manager" class="btn"><i class="fas fa-info"></i>관리자 게시판</a>
-                
-            </li>
+           
            
         </ui>
     </div>
