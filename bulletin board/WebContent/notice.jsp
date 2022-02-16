@@ -6,53 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<style type="text/css">
-
-.table {
-      border-collapse: collapse;
-      border-top: 3px solid #343A40;
-    }  
-    .table th {
-      color: #343A40;
-      background: #D6EEF2;
-      text-align: center;
-    }
-    .table th, .table td {
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
-    .table th:first-child, .table td:first-child {
-      border-left: 0;
-    }
-    .table th:last-child, .table td:last-child {
-      border-right: 0;
-    }
-    .table tr td:first-child{
-      text-align: center;
-    }
-    
-button {
-border: 1.5px solid #343A40;
-width: 150px;
-margin : 10px;
-font-weight: 400;
-color: #343A40;
-padding: 8px 25px; 
-cursor:pointer;
-border-radius:100px;
-}    
-
-form{
-margin : 10px;
-}
-
-fieldset { 
-border: 2px solid #343A40;
-padding: 10px;
-margin: 10px;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="css/table.css" />
 </head>
 
 <!DOCTYPE>
