@@ -18,7 +18,7 @@ if(master==null && student==null)
 	<div class="row">
 		<div class="col-lg-3">
 			<div class="list-group mb-4">
-				<a class="list-group-item list-group-item-info text-center font-weight-bold"></a>
+				<a class="list-group-item list-group-item-info text-center font-weight-bold">로그인 해주세요!</a>
 					<a class="list-group-item list-group-item-action text-center font-weight-bold"></a>
 			</div>
 		</div>
