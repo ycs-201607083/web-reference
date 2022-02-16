@@ -156,7 +156,7 @@
 								b_date = rs.getString("wrdate");
 								%>
 								<tr height=30px>
-								<td><input type="checkbox"></td>
+								<td><input type="checkbox" name="chk" value=<%=b_title%>></td>
 								<td><%=b_num%></td>
 								<td><%=b_type%></td>
 								<td><%=b_title%></td>
