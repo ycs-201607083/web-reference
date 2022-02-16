@@ -27,7 +27,7 @@
    
 }
 /*버튼 틀*/
-.btn{
+.btnC {
     display: block;
     padding: 15px 20px;
     background-color:  #b6e2e9;
@@ -37,7 +37,7 @@
 
 }
 /*작은 화살표*/
-.btn:before{
+.btnC:before {
     content: '';
     position: absolute;
     width: 0;
@@ -50,7 +50,7 @@
     z-index: 9;
     
 }
-.btn i {
+.btnC i {
     margin-right: 10px;
     background-color:  black;
 }

@@ -4,15 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%-- info.jsp는 bootstrap.min.css 와 table.css를 사용한다. --%>
+<link href="css/bootstrap.min.css" type="text/css" rel = "stylesheet">
+<link href="css/table.css" type="text/css" rel = "stylesheet">
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-div {
-   border: 2px;
-}
-</style>
 </head>
-
 <body>
 <% 
 String master = (String)session.getAttribute("MLoginID");
@@ -20,7 +17,7 @@ String student = (String)session.getAttribute("LoginID");
 if(master==null && student==null)
 {
 %>
-   <div class="container" >
+   <div class="container" margin-right=20px>
    <div class="row">
       <div class="col-lg-3">
          <div class="list-group mb-4">
@@ -34,7 +31,7 @@ if(master==null && student==null)
 else if(master==null)
 { 
 %>
-   <div class="container" >
+   <div class="container" margin-right=20px>
       <div class="row">
          <div class="col-lg-3">
             <div class="list-group mb-4">
@@ -52,7 +49,7 @@ else if(master==null)
 else
 { 
 %>
-   <div class="container" >
+   <div class="container" margin-right=20px>
       <div class="row">
          <div class="col-lg-3">
             <div class="list-group mb-4">
@@ -69,6 +66,5 @@ else
 <% 
 }
 %>
-
 </body>
 </html>

@@ -13,18 +13,18 @@
         <ui class="mainMenu">
         
         	 <li class="item">
-                <a href="bignotice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
+                <a href="bignotice.jsp" class="btnC"><i class="fas fa-sign-out-alt"></i>공지사항</a>
             </li>
         
         	 <li class="item" id="about">
-                <a href="AI.jsp?kind=daily" class="btn"><i class="fas fa-address-card"></i>일상 게시판</a>
+                <a href="AI.jsp?kind=daily" class="btnC"><i class="fas fa-address-card"></i>일상 게시판</a>
                 
             </li>
            
            
             <li class="item" id="account">
           
-                <a href="#account" class="btn"><i class="fas fa-user-circle"></i>코드 공유</a>
+                <a href="#account" class="btnC"><i class="fas fa-user-circle"></i>코드 공유</a>
                 <div class="subMenu">
                     <a href="AI.jsp?kind=web">웹/앱</a>
                     <a href="AI.jsp?kind=game">게임</a>

@@ -2,19 +2,86 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="top.jsp" %>
+
+
 <br><br>
-<link href="./css/table.css" type="text/css" rel = "stylesheet">
-<%@ include file="info.jsp" %>
-
-
 
 
 <!DOCTYPE>
 
 <html>
-
+<%@ include file="info.jsp" %>
 <head>
+<style type="text/css">
+.tableA {
+	  width:850px; 
+	  height:40px;
+      border-collapse: collapse;
+      border-top: 3px solid #343A40;     
+}  
+    .tableA th {
+    
+      color: #343A40;
+      background: #D6EEF2;
+      text-align: center;
+    }
+    .tableA th, .tableA td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    .tableA th:first-child, .tableA td:first-child {
+      border-left: 0;
+    }
+    .tableA th:last-child, .tableA td:last-child {
+      border-right: 0;
+    }
+    .tableA tr td:first-child{
+      text-align: center;
+    }
+    
+.buttonA {
+	float:right;
+	border: 1.5px solid #343A40;
+	width: 150px;
+	margin: 10px;
+	font-weight: 400;
+	color: #343A40;
+	padding: 8px 25px;
+	cursor: pointer;
+	border-radius: 100px;
+}
+ 
 
+.btnA {
+	border-radius: 100px;
+	margin-bottom:20px;
+	margin-right:10px;
+	float:right;
+}
+form{
+
+	 margin : 10px;
+}
+
+fieldset { 
+border: 2px solid #343A40;
+padding: 10px;
+margin: 10px;
+}
+
+
+a, a:hover {
+
+	text-decoration: none;
+
+}
+textarea {
+	width: 100%;
+	border: none;
+	resize: none;
+}
+
+</style>
 <title>레퍼런스 웹/앱팀</title>
 </head>
 
@@ -53,7 +120,7 @@ case "manager" :
 <div class="list">
 
    <legend> <%=name %> 게시판</legend>   
-   <table class="table">
+   <table class="tableA">
    <tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
    </th>
     <%
@@ -110,10 +177,10 @@ case "manager" :
     
   </table> 
 </div>
+<%@ include file="category.jsp" %>
+<div style="display: inline-block; margin:  0px; float: right;">
 
-
-<button type="button" class="btn1" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
-
-
+<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+</div>
 </body>
 </html>

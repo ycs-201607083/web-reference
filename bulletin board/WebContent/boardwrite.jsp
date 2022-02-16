@@ -68,8 +68,8 @@ if(name == null){
   </table> 
   
   </fieldset>
-	<button type="submit" class="btn1">게시글 작성</button>
-	<button type="button" class="btn1" onclick="javascript:history.back()">취소</button>
+	<button type="submit" class="btnB">게시글 작성</button>
+	<button type="buttonB" class="btnB" onclick="javascript:history.back()">취소</button>
   </form>
 </body>
 </html>
