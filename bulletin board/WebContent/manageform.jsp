@@ -11,7 +11,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link href="./css/manageform_css.css" type="text/css" rel="stylesheet">
 </head>
-<jsp:include page = "top2.jsp" flush = "false"/>
+<jsp:include page = "top.jsp" flush = "false"/>
 
 <br><br>
 
@@ -112,8 +112,8 @@
 			<fieldset>
 				<legend>&nbsp;게시판 관리</legend>
 				<div style="overflow-y: scroll;">
-					<table class="table">
-						<tr>
+					<table class="table text-center">
+						<tr height=20px;>
 							<th>선택</th>
 							<th>No.</th>
 							<th>게시판 종류</th>
@@ -178,7 +178,88 @@
 							}
 							}
 						%>
-						
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+							<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr>
+						</tr>
 						
 						
 					</table>

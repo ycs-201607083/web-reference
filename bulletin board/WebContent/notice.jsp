@@ -63,7 +63,6 @@ margin: 10px;
 
 <body>
 <div class="list">
-
 	<legend>공지사항</legend>	
 	<a href="bignotice.jsp" class="" style="padding-left: 47em">전체보기</a>
 	<table class="table">
