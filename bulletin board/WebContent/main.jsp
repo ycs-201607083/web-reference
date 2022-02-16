@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
 <br><br>
 <jsp:include page = "info.jsp" flush = "false"/>
 <jsp:include page = "notice.jsp" flush = "false"/>
+<jsp:include page = "category.jsp" flush = "false"/>
 <jsp:include page = "newpost.jsp" flush = "false"/>	
 </body>
 </html>
