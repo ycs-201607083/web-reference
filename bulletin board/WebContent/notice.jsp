@@ -9,12 +9,6 @@
 <link rel="stylesheet" type="text/css" href="css/table.css" />
 </head>
 
-<!DOCTYPE>
-
-<html>
-
-<head>
-
 <body>
 <div class="list">
 	<legend>공지사항</legend>	

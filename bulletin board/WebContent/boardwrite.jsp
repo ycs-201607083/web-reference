@@ -41,7 +41,7 @@ if(name == null){
 </script>
 <%} %>
 <!-- Navigation -->
-<jsp:include page = "top2.jsp" flush = "false"/>		
+<jsp:include page = "top.jsp" flush = "false"/>		
 		<br>
 <form action="writeOK.jsp" method="post" onsubmit="return ContentCheck()" name="write">
 	<fieldset>

@@ -23,11 +23,15 @@
 					<li class="nav-item active"><a class="nav-link" href="main.jsp">홈
 							<span class="sr-only">(current)</span>
 					</a></li>
+<<<<<<< HEAD
+=======
+				
+>>>>>>> ae3217deedbdba3fb5d3d249fe1f02e791ae3bd1
 					<li class="nav-item"><a class="nav-link"
 						href="login.jsp">로그인</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="join.jsp">회원가입</a></li>
-					<% }%>
+					
 					
 				</ul>
 			</div>
