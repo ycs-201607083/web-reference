@@ -18,7 +18,7 @@
     transform: translate(-50%, -50%);
 }
 .mainMenu{
-    width: 250px;
+    width: 258px;
     display: block;
     border-radius: 10px;
     overflow: hidden;
@@ -110,7 +110,7 @@
         <ui class="mainMenu">
             <li class="item" id="account">
           
-                <a href="#account" class="btn"><i class="fas fa-user-circle"></i>팀 게시판</a>
+                <a href="#account" class="btn"><i class="fas fa-user-circle"></i>코드 공유</a>
                 <div class="subMenu">
                     <a href="AI.jsp?kind=web">웹/앱</a>
                     <a href="AI.jsp?kind=game">게임</a>
@@ -119,14 +119,14 @@
                 </div>
             </li>
             <li class="item" id="about">
-                <a href="#about" class="btn"><i class="fas fa-address-card"></i>공유</a>
+                <a href="#about" class="btn"><i class="fas fa-address-card"></i>게시판</a>
                 <div class="subMenu">
                     <a href="AI.jsp?kind=daily">일상 공유</a>
-                    <a href="AI.jsp?kind=code">코딩 공유</a>
+                    <a href="AI.jsp?kind=code">유머 게시판</a>
                 </div>
             </li>
             <li class="item">
-                <a href="notice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
+                <a href="bignotice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
             </li>
             <li class="item" id="support">
                 <a href="#support" class="btn"><i class="fas fa-info"></i>Support</a>
