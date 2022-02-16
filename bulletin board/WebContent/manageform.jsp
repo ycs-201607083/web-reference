@@ -144,7 +144,9 @@
 							String sql = "select boardid, title, boardtype, writer, wrdate from board order by boardid desc limit 5";
 							pstmt_b = conn_b.prepareStatement(sql);
 							rs = pstmt_b.executeQuery();
-							
+							%>
+							<form action="delete.jsp" method="post">
+							<%
 							//각각의 결과 레코드를 변수에 입력
 							while(rs.next()){
 								b_num = rs.getString("boardid");
@@ -262,7 +264,7 @@
 						<tr>
 						</tr>
 						
-						
+						</form>
 					</table>
 				</div>
 			</fieldset>
