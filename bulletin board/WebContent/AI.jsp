@@ -3,11 +3,11 @@
 <%@ page import="java.sql.*" %>
 <%@ include file="top.jsp" %>
 <br><br>
-
+<link href="./css/table.css" type="text/css" rel = "stylesheet">
 <%@ include file="info.jsp" %>
 
 
-</head>
+
 
 <!DOCTYPE>
 
@@ -16,10 +16,6 @@
 <head>
 
 <title>레퍼런스 웹/앱팀</title>
-</head>
-
-<title>게시판 페이지</title>
-
 </head>
 
 <body>
@@ -59,7 +55,7 @@ case "manager" :
    <legend> <%=name %> 게시판</legend>   
    <table class="table">
    <tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
-    
+   </th>
     <%
     String b_num = null; //게시글 번호
     String b_title = null; //게시글 제목
@@ -114,7 +110,7 @@ case "manager" :
     
   </table> 
 </div>
- 
+
 
 <button type="button" class="btn1" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
 

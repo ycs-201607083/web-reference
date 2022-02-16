@@ -10,7 +10,7 @@
 <title>±Û ¼öÁ¤</title>
 </head>
 <body>
-<jsp:include page = "top2.jsp" flush = "false"/>
+<jsp:include page = "top.jsp" flush = "false"/>
 <form action="writeOK.jsp" method="post" onsubmit="return ContentCheck()" name="write">
 	<fieldset>
 	</div>
