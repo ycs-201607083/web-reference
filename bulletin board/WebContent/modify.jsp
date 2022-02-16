@@ -16,11 +16,11 @@
 	</div>
 	
 	<table class="table">
-	<tr><th>제목</th><th><a class = "title" id = "title" name = "title" rows= "1">saaaaaa </a>
+	<tr><th>제목</th><th><p class = "title" id = "title" name = "title" rows= "1" style="font-weight:500">saaaaaa </p>
 </th></tr>
-	<tr><td>작성자</td><td><a name = "content" >wasd</a></td></tr>
+	<tr><td>작성자</td><td><p name = "content" >wasd</p></td></tr>
 	 
-    <tr><td>글 내용</td><td><a name = "content" cols = "80" rows = "20" >jsp 게시판 내용 적어봤습니다</a></td></tr>
+    <tr><td>글 내용</td><td><p name = "content" cols = "80" rows = "20" >jsp 게시판 내용 적어봤습니다</p></td></tr>
   </table> 
   
  

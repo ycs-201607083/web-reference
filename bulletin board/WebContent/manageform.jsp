@@ -11,7 +11,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link href="./css/manageform_css.css" type="text/css" rel="stylesheet">
 </head>
-<jsp:include page = "top2.jsp" flush = "false"/>
+<jsp:include page = "top.jsp" flush = "false"/>
 
 <br><br>
 
@@ -21,6 +21,7 @@
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
 				<div height=200vh overflow-y= scroll overflow-x= auto>
+				<form action = "week7.jsp" method="post" name="textform">
 					<table class="table text-center" >
 						<tr height=20px;>
 							<th>선택</th>
@@ -102,8 +103,8 @@
 
 		<br>
 		<div style="display: flex; justify-content: center; align-items: center;">
-			<button type="button" class="mem_ok" value="승인" onsubmit="memok.jsp">승인</button>
-			<button type="button" class="mem_no" value="거절">거절</button>
+			<button type="button" class="mem_ok" value="승인" onclick="location.href = 'memok.jsp'">승인</button>
+			<button type="button" class="mem_no" value="거절" onclick="location.href = 'memno.jsp'">거절</button>
 		</div>
 		<hr>
 
@@ -112,8 +113,8 @@
 			<fieldset>
 				<legend>&nbsp;게시판 관리</legend>
 				<div style="overflow-y: scroll;">
-					<table class="table">
-						<tr>
+					<table class="table text-center">
+						<tr height=20px;>
 							<th>선택</th>
 							<th>No.</th>
 							<th>게시판 종류</th>
@@ -143,7 +144,9 @@
 							String sql = "select boardid, title, boardtype, writer, wrdate from board order by boardid desc limit 5";
 							pstmt_b = conn_b.prepareStatement(sql);
 							rs = pstmt_b.executeQuery();
-							
+							%>
+							<form action="delete.jsp" method="post">
+							<%
 							//각각의 결과 레코드를 변수에 입력
 							while(rs.next()){
 								b_num = rs.getString("boardid");
@@ -153,7 +156,7 @@
 								b_date = rs.getString("wrdate");
 								%>
 								<tr height=30px>
-								<td><input type="checkbox"></td>
+								<td><input type="checkbox" name="chk" value=<%=b_title%>></td>
 								<td><%=b_num%></td>
 								<td><%=b_type%></td>
 								<td><%=b_title%></td>
@@ -178,9 +181,90 @@
 							}
 							}
 						%>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+							<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						<tr>
+						<tr>
+						</tr>
 						
-						
-						
+						</form>
 					</table>
 				</div>
 			</fieldset>
@@ -188,7 +272,7 @@
 
 		<br>
 		<div style="display: flex; justify-content: center; align-items: center;">
-			<button type="button" class="board_delete" value="게시글 삭제">게시글 삭제</button>
+			<button type="submit" class="board_delete" value="게시글 삭제">게시글 삭제</button>
 			<button type="button" class="board_watch" value="게시글 보기">게시글 보기</button>
 		</div>
 	</form>

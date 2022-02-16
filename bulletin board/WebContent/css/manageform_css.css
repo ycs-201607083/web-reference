@@ -2,6 +2,7 @@
 	border-collapse: collapse;
 	border-top: 3px solid #343A40;
 	height: 300px;
+	
 }
 
 .pop{
@@ -50,4 +51,9 @@ fieldset {
 	border: 2px solid #343A40;
 	padding: 10px;
 	margin: 10px;
+}
+
+.scrolltable {
+ 	display: block;
+ 	overflow: auto;
 }
