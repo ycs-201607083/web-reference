@@ -8,10 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- Page Content -->
-	<div class="container">
-	<div class="row">
 
+<<<<<<< HEAD
 	<div class="col-lg-3">
         <ui class="mainMenu">
         
@@ -46,6 +44,8 @@
 
 		
 			<div class="col-lg-9 my-4 mb-4">
+=======
+>>>>>>> bc715ffec5dab1cd30971167d66358e1169603c1
 
 </body>
 </html>
