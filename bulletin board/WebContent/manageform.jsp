@@ -155,8 +155,8 @@
 
 		<br>
 		<div style="display: flex; justify-content: center; align-items: center;">
-			<button type="button" class="mem_ok" value="게시글 삭제">게시글 삭제</button>
-			<button type="button" class="mem_no" value="게시글 보기">게시글 보기</button>
+			<button type="button" class="board_delete" value="게시글 삭제">게시글 삭제</button>
+			<button type="button" class="board_watch" value="게시글 보기">게시글 보기</button>
 		</div>
 	</form>
 

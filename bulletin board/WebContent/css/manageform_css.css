@@ -31,7 +31,7 @@
 	text-align: center;
 }
 
-button {
+.mem_ok, .mem_no, .board_watch, .board_delete {
 	border: 1.5px solid #343A40;
 	width: 150px;
 	margin: 10px;

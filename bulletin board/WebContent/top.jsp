@@ -29,6 +29,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="join.jsp">회원가입</a></li>
 					<% }%>
+					
 				</ul>
 			</div>
 		</div>
