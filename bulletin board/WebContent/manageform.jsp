@@ -20,9 +20,10 @@
 		<div class="list">
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
-				<div height=200vh overflow-y= scroll overflow-x= auto>
+				<div height=200vh>
 				<form action = "week7.jsp" method="post" name="textform">
-					<table class="table text-center" >
+				<div style="overflow-y:auto; width:800px; height:200px; display:block">
+					<table class="table text-center">
 						<tr height=20px;>
 							<th>선택</th>
 							<th>No.</th>
@@ -31,6 +32,23 @@
 							<th>ID</th>
 							<th>가입신청날짜</th>
 						</tr>
+						<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+							<tr height=30px>
+								<td><input type="checkbox"></td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+								<td>3</td>
+								<td>3</td>
+							</tr>
+						
 						<!-- DB에서 subcheck가 X인 사람들만 검색하여 리스트 작성 -->
 						<!-- No. 는 for문에서 사용되는 변수를 이용 -->
 						<%
@@ -112,7 +130,7 @@
 		<div class="list">
 			<fieldset>
 				<legend>&nbsp;게시판 관리</legend>
-				<div style="overflow-y: scroll;">
+				<div style="overflow-y:auto; width:800px; height:200px; display:block"> 
 					<table class="table text-center">
 						<tr height=20px;>
 							<th>선택</th>
@@ -146,6 +164,7 @@
 							rs = pstmt_b.executeQuery();
 							%>
 							<form action="delete.jsp" method="post">
+							<input type="hidden" name="check" value="1">
 							<%
 							//각각의 결과 레코드를 변수에 입력
 							while(rs.next()){
@@ -156,10 +175,10 @@
 								b_date = rs.getString("wrdate");
 								%>
 								<tr height=30px>
-								<td><input type="checkbox"></td>
+								<td><input type="checkbox" name="chk" value="<%=b_num%>"></td>
 								<td><%=b_num%></td>
 								<td><%=b_type%></td>
-								<td><%=b_title%></td>
+								<td><a href="modify.jsp?id=<%=b_num%>&type=<%=b_type%>"><%=b_title%></a></td>
 								<td><%=b_writer%></td>
 								<td><%=b_date%></td>
 							</tr>

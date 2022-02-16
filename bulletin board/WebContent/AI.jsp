@@ -2,34 +2,45 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="top.jsp" %>
+
+
 <br><br>
-<%@ include file="category.jsp" %>
-<link href="./css/boradwrite_css.css" type="text/css" rel = "stylesheet">
+
+
+<!DOCTYPE>
+
+<html>
+<%@ include file="info.jsp" %>
+<head>
 <style type="text/css">
-.table {
+.tableA {
+	  width:850px; 
+	  height:40px;
       border-collapse: collapse;
-      border-top: 3px solid #343A40;
-    }  
-    .table th {
+      border-top: 3px solid #343A40;     
+}  
+    .tableA th {
+    
       color: #343A40;
       background: #D6EEF2;
       text-align: center;
     }
-    .table th, .table td {
+    .tableA th, .tableA td {
       padding: 10px;
       border: 1px solid #ddd;
     }
-    .table th:first-child, .table td:first-child {
+    .tableA th:first-child, .tableA td:first-child {
       border-left: 0;
     }
-    .table th:last-child, .table td:last-child {
+    .tableA th:last-child, .tableA td:last-child {
       border-right: 0;
     }
-    .table tr td:first-child{
+    .tableA tr td:first-child{
       text-align: center;
     }
     
-button {
+.buttonA {
+	float:right;
 	border: 1.5px solid #343A40;
 	width: 150px;
 	margin: 10px;
@@ -41,14 +52,15 @@ button {
 }
  
 
-.btn1 {
+.btnA {
 	border-radius: 100px;
 	margin-bottom:20px;
 	margin-right:10px;
 	float:right;
 }
 form{
-margin : 10px;
+
+	 margin : 10px;
 }
 
 fieldset { 
@@ -57,27 +69,20 @@ padding: 10px;
 margin: 10px;
 }
 
-<!-- 링크를 달때쓰는 태그들을 검은색으로 만들고 밑줄이 그어지지 않게 스타일 설정 -->
+
 a, a:hover {
 
 	text-decoration: none;
 
-	}
+}
+textarea {
+	width: 100%;
+	border: none;
+	resize: none;
+}
 
 </style>
-</head>
-
-<!DOCTYPE>
-
-<html>
-
-<head>
-
 <title>레퍼런스 웹/앱팀</title>
-</head>
-
-<title>게시판 페이지</title>
-
 </head>
 
 <body>
@@ -89,35 +94,35 @@ String name = "";
 switch(kind){
 
 case "web" :
-	name = "웹/앱 팀";
-	break;
+   name = "웹/앱 팀";
+   break;
 case "ai" :
-	name = "인공지능 팀";
-	break;
+   name = "인공지능 팀";
+   break;
 case "net" :
-	name = "네트워크 팀";
-	break;
+   name = "네트워크 팀";
+   break;
 case "game" :
-	name = "게임 팀";
-	break;
+   name = "게임 팀";
+   break;
 case "daily" :
-	name = "일상 공유";
-	break;
+   name = "일상 공유";
+   break;
 case "fun" :
-	name = "유머 게시판";
-	break;
+   name = "유머 게시판";
+   break;
 case "manager" :
-	name = "관리자";
-	break;
+   name = "관리자";
+   break;
 }
 %>
 
 <div class="list">
 
-	<legend> <%=name %> 게시판</legend>	
-	<table class="table">
-	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
-    
+   <legend> <%=name %> 게시판</legend>   
+   <table class="tableA">
+   <tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
+   </th>
     <%
     String b_num = null; //게시글 번호
     String b_title = null; //게시글 제목
@@ -148,7 +153,7 @@ case "manager" :
 			b_date = rs.getString("wrdate");
 			%>
 		<tr><td><%=b_num%></td>
-		<td><%=b_title%></td>
+		<td><a href="modify.jsp?id=<%=b_num%>&type=<%=kind%>"><%=b_title%></a></td>
 		<td><%=b_writer%></td>
 		<td><%=b_date%></td></tr>
 		<%
@@ -172,9 +177,10 @@ case "manager" :
     
   </table> 
 </div>
- 
+<%@ include file="category.jsp" %>
+<div style="display: inline-block; margin:  0px; float: right;">
 
-<button type="button" class="btn1" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
-
+<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+</div>
 </body>
 </html>

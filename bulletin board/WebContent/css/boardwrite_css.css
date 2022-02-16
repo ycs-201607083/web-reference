@@ -1,4 +1,5 @@
 /* <style type="text/css"> */
+/* info.jsp, boardwrite.jsp 에서 사용하는 css */
 .table {
 	border-collapse: collapse;
 }
@@ -30,7 +31,7 @@
 	text-align: left;
 }
 
-button {
+.button {
 	border: 1.5px solid #343A40;
 	width: 150px;
 	margin: 10px;
@@ -53,7 +54,7 @@ textarea {
 	resize: none;
 }
 
-.btn1 {
+.btn {
 	border-radius: 100px;
 	margin-bottom:20px;
 	margin-right:10px;
@@ -68,4 +69,7 @@ textarea {
 	margin-bottom:10px;
 }
 
+div {
+   border: 2px;
+}
 /* </style> */
