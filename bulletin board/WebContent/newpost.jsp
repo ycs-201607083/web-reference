@@ -98,7 +98,7 @@ margin: 10px;
 			b_date = rs.getString("wrdate");
 			%>
 		<tr><td><%=b_num%></td>
-		<td><%=b_title%></td>
+		<td><a href="modify.jsp?id=<%=b_num%>&type=<%=b_type%>"><%=b_title%></a></td>
 		<td><%=b_writer%></td>
 		<td><%=b_date%></td></tr>
 		<%

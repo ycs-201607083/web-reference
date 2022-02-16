@@ -164,6 +164,7 @@
 							rs = pstmt_b.executeQuery();
 							%>
 							<form action="delete.jsp" method="post">
+							<input type="hidden" name="check" value="1">
 							<%
 							//각각의 결과 레코드를 변수에 입력
 							while(rs.next()){
@@ -174,10 +175,10 @@
 								b_date = rs.getString("wrdate");
 								%>
 								<tr height=30px>
-								<td><input type="checkbox" name="chk" value=<%=b_title%>></td>
+								<td><input type="checkbox" name="chk" value="<%=b_num%>"></td>
 								<td><%=b_num%></td>
 								<td><%=b_type%></td>
-								<td><%=b_title%></td>
+								<td><a href="modify.jsp?id=<%=b_num%>&type=<%=b_type%>"><%=b_title%></a></td>
 								<td><%=b_writer%></td>
 								<td><%=b_date%></td>
 							</tr>

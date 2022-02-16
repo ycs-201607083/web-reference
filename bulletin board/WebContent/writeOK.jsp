@@ -16,6 +16,12 @@ String title = request.getParameter("title");
 String content = request.getParameter("content");
 String name = (String)session.getAttribute("Name");
 Timestamp register = new Timestamp(System.currentTimeMillis());
+String check = request.getParameter("update");
+int id;
+if(check == null)
+	id = 0;
+else
+	id = Integer.parseInt(request.getParameter("id"));
 
 //DB연결
 Connection conn = null;
@@ -29,6 +35,7 @@ try{
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	
+	if(check==null){
 	//SQL문으로 게시글 내용 및 날짜 등 DB에 입력
 	String sql = "insert into board(title,boardtype,writer,wrdate,wrcontent) values(?,?,?,?,?)";
 	pstmt = conn.prepareStatement(sql);
@@ -38,6 +45,17 @@ try{
 	pstmt.setTimestamp(4, register);
 	pstmt.setString(5,content);
 	pstmt.executeUpdate();
+	}
+	
+	else{
+		String sql = "update board set title=?, boardtype=?, wrcontent=? where boardid=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1,title);
+		pstmt.setString(2,kind);
+		pstmt.setString(3,content);
+		pstmt.setInt(4,id);
+		pstmt.executeUpdate();
+	}
 	%>
 	<script>
 	location.href="AI.jsp?kind=<%=kind%>";
