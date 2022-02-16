@@ -122,7 +122,7 @@
                 <a href="#about" class="btn"><i class="fas fa-address-card"></i>게시판</a>
                 <div class="subMenu">
                     <a href="AI.jsp?kind=daily">일상 공유</a>
-                    <a href="AI.jsp?kind=code">유머 게시판</a>
+                    <a href="AI.jsp?kind=fun">유머 게시판</a>
                 </div>
             </li>
             <li class="item">

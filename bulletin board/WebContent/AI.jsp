@@ -103,8 +103,8 @@ case "game" :
 case "daily" :
 	name = "일상 공유";
 	break;
-case "code" :
-	name = "코드 공유";
+case "fun" :
+	name = "유머 게시판";
 	break;
 case "manager" :
 	name = "관리자";
