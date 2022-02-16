@@ -1,8 +1,16 @@
+
+
 .table {
+	height:300px;
 	border-collapse: collapse;
 	border-top: 3px solid #343A40;
+<<<<<<< HEAD
 	height: 300px;
 	
+=======
+	padding :50px;
+	table-layout: fixed;
+>>>>>>> 5f0874a715df299503e4fa1db2c7676652d7828e
 }
 
 .pop{
@@ -45,6 +53,8 @@
 
 form {
 	margin: 10px;
+	width: 60%;
+	display: table; margin-left: auto; margin-right: auto; 
 }
 
 fieldset {
