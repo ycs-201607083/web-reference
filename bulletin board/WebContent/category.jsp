@@ -107,9 +107,12 @@
 	<div class="row">
 
 	<div class="col-lg-3">
+	
         <ui class="mainMenu">
+            <li class="item">
+                <a href="bignotice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
+            </li>
             <li class="item" id="account">
-          
                 <a href="#account" class="btn"><i class="fas fa-user-circle"></i>코드 공유</a>
                 <div class="subMenu">
                     <a href="AI.jsp?kind=web">웹/앱</a>
@@ -119,20 +122,10 @@
                 </div>
             </li>
             <li class="item" id="about">
-                <a href="#about" class="btn"><i class="fas fa-address-card"></i>게시판</a>
-                <div class="subMenu">
-                    <a href="AI.jsp?kind=daily">일상 공유</a>
-                    <a href="AI.jsp?kind=fun">유머 게시판</a>
-                </div>
+                <a href="AI.jsp?kind=dailyt" class="btn"><i class="fas fa-address-card"></i>일상 공유</a>
             </li>
-            <li class="item">
-                <a href="bignotice.jsp" class="btn"><i class="fas fa-sign-out-alt"></i>공지사항</a>
-            </li>
-            <li class="item" id="support">
-                <a href="#support" class="btn"><i class="fas fa-info"></i>Support</a>
-                <div class="subMenu">
-                    <a href="AI.jsp?kind=manager">관리자 게시판</a>
-                </div>
+			<li class="item" id="about">
+                <a href="AI.jsp?kind=fun" class="btn"><i class="fas fa-address-card"></i>유머 게시판</a>
             </li>
            
         </ui>
