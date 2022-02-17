@@ -58,3 +58,11 @@ a, a:hover {
 	text-decoration: none;
 
 }
+
+.infocate {
+	width : 200px;
+}
+.notice { 
+	width:800px;
+	left:500px;
+}

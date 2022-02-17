@@ -15,16 +15,14 @@
 
 <br><br>
 
-	<form method="get" action=''>
 		<!-- 회원관리 게시판, 승인제, 승인불가 기능 -->
 		<div class="list">
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
-				<div height=200vh>
-				<form action = "week7.jsp" method="post" name="textform">
+				<form action = "memok.jsp" method="post" name="textform">
 				<div style="overflow-y:auto; width:800px; height:200px; display:block">
 					<table class="table text-center">
-						<tr height=20px;>
+						<tr class ="sticky" height=20px;>
 							<th>선택</th>
 							<th>No.</th>
 							<th>학번</th>

@@ -23,7 +23,7 @@ if(master==null && student==null)
          <div class="list-group mb-4">
             <a class="list-group-item list-group-item-info text-center font-weight-bold"></a>
                <a class="list-group-item list-group-item-action text-center font-weight-bold">
-               <br><br><br><br><button onclick="location.href='login.jsp'"">로그인</button>
+               <br><br><br><br><button onclick="location.href='login.jsp'">로그인</button>
                <br><br><br><br><br><br></a>
          </div>
       </div>

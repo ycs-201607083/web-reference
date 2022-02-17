@@ -11,8 +11,7 @@
 
 <body>
 <div class="list">
-	<legend>공지사항</legend>	
-	<a href="bignotice.jsp" class="" style="padding-left: 47em">전체보기</a>
+	<legend><a href="bignotice.jsp">공지사항</a></legend>	
 	<table class="table">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
     <tr><td>1</td><td>게시판 이용 규칙</td><td>관리자</td><td>20xx-xx-xx</td></tr>

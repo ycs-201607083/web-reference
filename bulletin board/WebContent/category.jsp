@@ -4,12 +4,13 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/category.css" />
+<link href="css/table.css" type="text/css" rel = "stylesheet">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<div class="col-lg-3">
+	<div class="col-lg-3 intocate">
         <ui class="mainMenu">
         
         	 <li class="item">
@@ -37,8 +38,5 @@
            
         </ui>
     </div>
-
-		
-			<div class="col-lg-9 my-4 mb-4">
 </body>
 </html>

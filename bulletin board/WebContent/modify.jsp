@@ -44,7 +44,7 @@ try{
 	}
 
 %>
-<jsp:include page = "top2.jsp" flush = "false"/>
+<jsp:include page = "top.jsp" flush = "false"/>
 <form action="boardwrite.jsp" method="post">
 	<fieldset>
 	

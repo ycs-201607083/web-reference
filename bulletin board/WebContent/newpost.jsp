@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="css/table.css" type="text/css" rel = "stylesheet">
 </head>
 <style type="text/css">
 
@@ -67,13 +68,14 @@ margin: 10px;
 
 	<legend>최근 게시글</legend>	
 	<br>
-	<table class="table">
+	<table class="table notice">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
     <%
     String b_num = null; //게시글 번호
     String b_title = null; //게시글 제목
     String b_writer = null; //게시글 작성자
     String b_date = null; //게시글 날짜
+    String b_type = null; // 게시판 타입
     
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -94,8 +96,10 @@ margin: 10px;
 		while(rs.next()){
 			b_num = rs.getString("boardid");
 			b_title = rs.getString("title");
+			b_type = rs.getString("boardtype");
 			b_writer = rs.getString("writer");
 			b_date = rs.getString("wrdate");
+			
 			%>
 		<tr><td><%=b_num%></td>
 		<td><a href="modify.jsp?id=<%=b_num%>&type=<%=b_type%>"><%=b_title%></a></td>

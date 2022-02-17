@@ -2,15 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="top.jsp" %>
-
-
-<br><br>
-
-
 <!DOCTYPE>
-
 <html>
-<%@ include file="info.jsp" %>
+<jsp:include page = "info.jsp" flush = "false"/>
 <head>
 <style type="text/css">
 .tableA {
@@ -20,7 +14,6 @@
       border-top: 3px solid #343A40;     
 }  
     .tableA th {
-    
       color: #343A40;
       background: #D6EEF2;
       text-align: center;
