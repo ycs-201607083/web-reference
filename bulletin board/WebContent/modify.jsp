@@ -31,7 +31,7 @@ try{
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	
-	//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
+	//sql문으로 db에 제목, 작성자, 내용 검색
 	String sql = "select title, writer, wrcontent from board where boardid=?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, id);
@@ -60,7 +60,7 @@ try{
   </fieldset>
 
 	 <button type="submit" class="btn1">현재 글 수정</button>
-	 <button type="button" class="btn1" onclick="delete.jsp?kind=<%=type%>&chk=<%=id%>">현재 글 삭제</button>
+	 <button type="button" class="btn1" onclick="javascript:location.href='delete.jsp?kind=<%=type%>&id=<%=id%>'">현재 글 삭제</button>
 	 <button type="button" class="btn1" onclick="javascript:history.back()">이전 글 목록</button>
 	 </form>
 	 <%

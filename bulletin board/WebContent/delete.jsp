@@ -9,7 +9,7 @@
 <body>
 <%    
 	String chk[] = request.getParameterValues("chk"); //manageform.jsp에서 넘어온 boardid값 배열
-	String id = request.getParameter("chk"); //modify.jsp에서 받아온 boardid값
+	String id = request.getParameter("id"); //modify.jsp에서 받아온 boardid값
     String writer = (String)session.getAttribute("Name"); //로그인 한 사람의 이름
     String manager = (String)session.getAttribute("MName"); //마스터 로그인 시
     String type = request.getParameter("kind"); //게시판 종류
