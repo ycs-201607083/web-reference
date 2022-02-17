@@ -34,6 +34,7 @@
 <body class="pt-5">
 <%
 String name = (String)session.getAttribute("Name");
+String manager = (String)session.getAttribute("MName");
 String id = request.getParameter("title");
 int i_id;
 
@@ -46,7 +47,7 @@ String b_title = null;
 String b_content = null;
 String b_num = null;
 
-if(name == null){
+if(name == null && manager == null){
 	%>
 <script>
 	alert("로그인 후 이용 가능합니다.");
