@@ -58,12 +58,21 @@ try{
   </table>
 	<input type="hidden" value="<%=id%>" name="title">
   </fieldset>
+  <%
+	if(name==b_writer){
+		 %>
 
 	 <button type="submit" class="btn1">현재 글 수정</button>
 	 <button type="button" class="btn1" onclick="javascript:location.href='delete.jsp?kind=<%=type%>&id=<%=id%>'">현재 글 삭제</button>
 	 <button type="button" class="btn1" onclick="javascript:history.back()">이전 글 목록</button>
 	 </form>
 	 <%
+	}
+  	else if(name != b_writer){
+  		%>
+  		 <button type="button" class="btn1" onclick="javascript:history.back()">이전 글 목록</button>
+  		 <%
+  	}
 }catch(SQLException ex){
 	ex.printStackTrace();
 } finally {

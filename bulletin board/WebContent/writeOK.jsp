@@ -23,6 +23,10 @@ if(check == null)
 else
 	id = Integer.parseInt(request.getParameter("id"));
 
+//관리자로 접속 시 name = manager
+if(name == null)
+	name = "manager";
+
 //DB연결
 Connection conn = null;
 PreparedStatement pstmt = null;
