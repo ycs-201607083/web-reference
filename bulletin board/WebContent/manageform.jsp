@@ -16,7 +16,7 @@
 <br><br>
 
 		<!-- 회원관리 게시판, 승인제, 승인불가 기능 -->
-		<form action = "memok.jsp" method="post" name="textform">
+		<form method="post" name="textform">
 		<div class="list">
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
@@ -105,8 +105,8 @@
 
 		<br>
 		<div style="display: flex; justify-content: center; align-items: center;">
-			<button type="submit" class="mem_ok" value="승인" onsubmit="location.href = 'memok.jsp'">승인</button>
-			<button type="button" class="mem_no" value="거절" onsubmit="location.href = 'memno.jsp'">거절</button>
+			<button type="submit" class="mem_ok" value="승인" onclick="javascript: form.action='memok.jsp';">승인</button>
+			<button type="submit" class="mem_no" value="거절" onclick="javascript: form.action='memno.jsp';">거절</button>
 		</div>
 		</form>
 		<hr>

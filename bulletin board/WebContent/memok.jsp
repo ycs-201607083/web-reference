@@ -1,58 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.sql.*" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-</head>
-<body>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.Enumeration" %>
 <%    
-	String memck[] = request.getParameterValues("memck"); //manageform.jsp에서 넘어온 stdid값 배열
+	//Enumeration memck = request.getParameterNames(); //manageform.jsp에서 넘어온 stdid값 배열
+	String memck [] = request.getParameterValues("memck");
 	String id = null;
-   
+    int i;
     Connection conn = null;
     PreparedStatement pstmt = null;
-    StringBuffer sql = new StringBuffer();
+    String sql = null;
     try{
-    	int i, rs=-1;
     	String jdbcUrl = "jdbc:mysql://localhost:3306/web_ref_db?useUnicode=yes&characterEncoding=UTF8";
 		String dbId = "admin";
 		String dbPass = "password";
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
-
-			for(i = 0; i < memck.length-1; i++){
+		for(i = 0; i < memck.length; i++){
 				//sql문으로 db에 chk배열의 학번의 승인여부를 'O' 로 업데이트
 				id = memck[i];
-				sql.append("update member set signcheck = 'O' where id = ?");
-				System.out.println(sql);
-				pstmt = conn.prepareStatement(sql.toString());
+				sql = "update member set signcheck = 'O' where id = ?";
+				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, id);
-				rs = pstmt.executeUpdate();
-				if(rs == 1)
-					System.out.println("성공");
-				else
-					System.out.println("실패");
-				conn.commit();
+				pstmt.executeUpdate();
 			}
-			
+		%>
+		<script>
+			alert("가입 승인이 완료되었습니다.");
+			location.href="manageform.jsp";
+    	</script>
+		<%
+	    }catch(SQLException ex){
+	    	ex.printStackTrace();
+	    }catch(NullPointerException exx){
 			%>
 			<script>
+				alert("승인할 사람을 선택해주세요.")
 				location.href="manageform.jsp";
 	    	</script>
 			<%
-	    }
-    	catch(SQLException ex)
-    	{
-	    	ex.printStackTrace();
-	    } 
-    	finally {
+	    } finally {
 			if (pstmt != null)
 				try {pstmt.close();} catch (SQLException sqle) {}
 			if (conn != null)
 				try {conn.close();} catch (SQLException sqle) {}
 	    }
     %>
-</body>
-</html>

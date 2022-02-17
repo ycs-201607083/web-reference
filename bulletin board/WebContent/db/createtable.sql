@@ -1,5 +1,5 @@
 create table member(
-	stdid int(20) primary key,
+	stdid int primary key,
 	id varchar(20) not null,
 	passwd varchar(30) not null,
 	name varchar(20) not null,
@@ -18,3 +18,5 @@ create table board(
 ) charset = 'utf8';
  
 update member set signcheck = 'O' where id = 'geun10121';
+
+drop table member;
