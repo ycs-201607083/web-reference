@@ -1,19 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link href="./css/boradwrite_css.css" type="text/css" rel = "stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<meta charset="EUC-KR">
-<title>±Û ¼öÁ¤</title>
+<meta charset="UTF-8">
+<title>ê¸€ ìˆ˜ì •</title>
 </head>
 <body>
 <%
-String b_title = null; //°Ô½Ã±Û Á¦¸ñ
-String b_writer = null; //ÀÛ¼ºÀÚ
-String b_content = null; //°Ô½Ã±Û ³»¿ë
+String b_title = null; //ê²Œì‹œê¸€ ì œëª©
+String b_writer = null; //ìž‘ì„±ìž
+String b_content = null; //ê²Œì‹œê¸€ ë‚´ìš©
 
 String id = request.getParameter("id");
 String type = request.getParameter("type");
@@ -30,13 +31,13 @@ try{
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	
-	//sql¹®À¸·Î db¿¡ ¹øÈ£, Á¦¸ñ, ÀÛ¼ºÀÚ, Á¾·ù, ³¯Â¥ °Ë»ö
+	//sqlë¬¸ìœ¼ë¡œ dbì— ë²ˆí˜¸, ì œëª©, ìž‘ì„±ìž, ì¢…ë¥˜, ë‚ ì§œ ê²€ìƒ‰
 	String sql = "select title, writer, wrcontent from board where boardid=?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, id);
 	rs = pstmt.executeQuery();
 	
-	//°¢°¢ÀÇ °á°ú ·¹ÄÚµå¸¦ º¯¼ö¿¡ ÀÔ·Â
+	//ê°ê°ì˜ ê²°ê³¼ ë ˆì½”ë“œë¥¼ ë³€ìˆ˜ì— ìž…ë ¥
 	while(rs.next()){
 		b_title = rs.getString("title");
 		b_writer = (String)rs.getString("writer");
@@ -49,18 +50,19 @@ try{
 	<fieldset>
 	
 	<table class="table">
-	<tr><th>Á¦¸ñ</th><th><p rows= "1" style="font-weight:500"><%=b_title%></p>
+	<tr><th>ì œëª©</th><th><p rows= "1" style="font-weight:500"><%=b_title%></p>
 </th></tr>
-	<tr><td>ÀÛ¼ºÀÚ</td><td><p><%=b_writer%></p></td></tr>
+	<tr><td>ìž‘ì„±ìž</td><td><p><%=b_writer%></p></td></tr>
 	 
-    <tr><td>±Û ³»¿ë</td><td><p cols = "80" rows = "20" ><%=b_content%></p></td></tr>
+    <tr><td>ê¸€ ë‚´ìš©</td><td><p cols = "80" rows = "20" ><%=b_content%></p></td></tr>
   </table>
 	<input type="hidden" value="<%=id%>" name="title">
   </fieldset>
 
-	 <button type="submit" class="btn1">ÇöÀç ±Û ¼öÁ¤</button>
-	 <button type="button" class="btn1" onclick="NewFile.jsp?kind=<%=type%>&chk=<%=id%>">ÇöÀç ±Û »èÁ¦</button>
-	 <button type="button" class="btn1" onclick="javascript:history.back()">ÀÌÀü ±Û ¸ñ·Ï</button>
+	 <button type="submit" class="btn1">í˜„ìž¬ ê¸€ ìˆ˜ì •</button>
+	 <button type="button" class="btn1" onclick="delete.jsp?kind=<%=type%>&chk=<%=id%>">í˜„ìž¬ ê¸€ ì‚­ì œ</button>
+	 <button type="button" class="btn1" onclick="javascript:history.back()">ì´ì „ ê¸€ ëª©ë¡</button>
+	 </form>
 	 <%
 }catch(SQLException ex){
 	ex.printStackTrace();
@@ -78,6 +80,5 @@ try{
 	}
 	}
   %>
-</form>
 </body>
 </html>

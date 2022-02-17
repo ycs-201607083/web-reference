@@ -8,8 +8,10 @@
 </head>
 <body>
 <%    
-	String chk[] = request.getParameterValues("chk");
+	String chk[] = request.getParameterValues("chk"); //manageform.jsp에서 넘어온 boardid값 배열
+	String id = request.getParameter("chk"); //modify.jsp에서 받아온 boardid값
     String writer = (String)session.getAttribute("Name"); //로그인 한 사람의 이름
+    String manager = (String)session.getAttribute("MName"); //마스터 로그인 시
     String type = request.getParameter("kind"); //게시판 종류
     String check = request.getParameter("check");
     int i_check;
@@ -19,7 +21,7 @@
     	i_check = Integer.parseInt(check);
     int i;
     
-    if(writer == null){
+    if(writer == null && manager == null){
     	%>
     	<script>
     	alert("로그인 후 이용 가능합니다.");
@@ -39,12 +41,19 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
+		if(i_check == 1){
 		for(i = 0; i < chk.length; i++){
 		//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
 		sql = "delete from board where boardid=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, Integer.parseInt(chk[i]));
 		pstmt.executeUpdate();
+		}}
+		else{
+			sql = "delete from board where boardid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(id));
+			pstmt.executeUpdate();
 		}
 
 		%>

@@ -16,10 +16,10 @@
 <br><br>
 
 		<!-- 회원관리 게시판, 승인제, 승인불가 기능 -->
+		<form action = "memok.jsp" method="post" name="textform">
 		<div class="list">
 			<fieldset >
 				<legend align="center">&nbsp;회원관리</legend>
-				<form action = "memok.jsp" method="post" name="textform">
 				<div style="overflow-y:auto; width:800px; height:200px; display:block">
 					<table class="table text-center">
 						<tr class ="sticky" height=20px;>
@@ -122,9 +122,11 @@
 			<button type="button" class="mem_ok" value="승인" onclick="location.href = 'memok.jsp'">승인</button>
 			<button type="button" class="mem_no" value="거절" onclick="location.href = 'memno.jsp'">거절</button>
 		</div>
+		</form>
 		<hr>
 
 		<!-- 게시판 내 글 삭제 및 기타 기능 추가 -->
+		<form action="delete.jsp" method="post">
 		<div class="list">
 			<fieldset>
 				<legend>&nbsp;게시판 관리</legend>
@@ -161,7 +163,7 @@
 							pstmt_b = conn_b.prepareStatement(sql);
 							rs = pstmt_b.executeQuery();
 							%>
-							<form action="delete.jsp" method="post">
+							
 							<input type="hidden" name="check" value="1">
 							<%
 							//각각의 결과 레코드를 변수에 입력
@@ -206,82 +208,6 @@
 								<td>3</td>
 								<td>3</td>
 							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-							<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr height=30px>
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>2</td>
-								<td>2</td>
-								<td>3</td>
-								<td>3</td>
-							</tr>
-						<tr>
-						<tr>
-						</tr>
-						
-						</form>
 					</table>
 				</div>
 			</fieldset>
