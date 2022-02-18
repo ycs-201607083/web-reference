@@ -16,7 +16,7 @@
 	<table class="table">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
   </table> 
-<a href="bignotice.jsp" class="" style="padding-left: 47em">전체보기</a>
+<a href="bignotice.jsp" class="" style="padding-left: 46em">전체보기</a>
 	</div>
 </body>
 </html>

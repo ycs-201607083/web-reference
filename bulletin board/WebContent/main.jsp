@@ -20,9 +20,7 @@ pageEncoding="UTF-8"%>
 <div class="mainbatch1">
 <jsp:include page = "info.jsp" flush = "false"/>
 <jsp:include page = "notice.jsp" flush = "false"/>
-</div>
 
-<div class="mainbatch2">
 <jsp:include page = "category.jsp" flush = "false"/>
 <jsp:include page = "newpost.jsp" flush = "false"/>	
 </div>

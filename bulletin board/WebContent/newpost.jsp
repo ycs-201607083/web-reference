@@ -67,7 +67,6 @@ margin: 10px;
 <div class="list">
 
 	<legend>최근 게시글</legend>	
-	<br>
 	<table class="table notice">
 	<tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
     <%
