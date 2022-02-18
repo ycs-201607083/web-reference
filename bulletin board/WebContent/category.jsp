@@ -14,7 +14,7 @@
         <ui class="mainMenu">
         
         	 <li class="item">
-                <a href="bignotice.jsp" class="btnC"><i class="fas fa-sign-out-alt"></i>공지사항</a>
+                <a href="AI.jsp?kind=notice" class="btnC"><i class="fas fa-sign-out-alt"></i>공지사항</a>
             </li>
         
         	 <li class="item" id="about">

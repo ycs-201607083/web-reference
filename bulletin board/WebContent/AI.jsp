@@ -3,10 +3,8 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.lang.*" %>
 <%@ include file="top.jsp" %>
-<br><br>
 <!DOCTYPE>
 <html>
-<meta charset="UTF-8">
 <jsp:include page = "info.jsp" flush = "false"/>
 <head>
 <style type="text/css">
@@ -89,6 +87,7 @@ int board_num; //한페이지에 10개씩 몇 페이지 나오는지 확인 올�
 
 <%
 String kind = (String)request.getParameter("kind");
+String manager = (String)session.getAttribute("MName");
 String name = "";
 String s_page = request.getParameter("page");
 int page_num;
@@ -114,9 +113,9 @@ case "game" :
 case "daily" :
    name = "일상";
    break;
-case "manager" :
-   name = "관리자";
-   break;
+case "notice" :
+	   name = "공지사항";
+	   break;
 }
 %>
 
@@ -193,13 +192,23 @@ case "manager" :
     
   </table> 
 </div>
-
 <%@ include file="category.jsp" %>
 <div style="display: inline-block; margin:  0px; float: right;">
-
-<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
-<br>
 <%
+if(name == "공지사항"){
+	if(manager != null){
+		%>
+		<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+		<%
+	}
+	else{
+			
+		}
+}else{
+	%>
+<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+<%
+}
 int i;
 for(i=1; i<=board_num; i++){
 %>
