@@ -60,11 +60,13 @@ try{
 	<input type="hidden" value="<%=id%>" name="title">
   </fieldset>
   <%
-  if(name == null){
-		name = manager;
-		b_writer = manager;
+  if(name == null && manager == null){
+		name = "name";
+  }else if(manager != null){
+	  name = "admin";
+	  b_writer = "admin";
   }
-	if(name.equals(b_writer) || manager == "admin"){
+	if(name.equals(b_writer)){
 		 %>
 
 	 <button type="submit" class="btn1">현재 글 수정</button>
@@ -73,7 +75,7 @@ try{
 	 </form>
 	 <%
 	}
-  	else if(!name.equals(b_writer) || manager == null){
+  	else{
   		%>
   		 <button type="button" class="btn1" onclick="javascript:history.back()">이전 글 목록</button>
   		 <%
