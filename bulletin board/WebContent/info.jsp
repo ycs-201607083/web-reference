@@ -57,7 +57,7 @@ else
                <a class="list-group-item list-group-item-action text-center font-weight-bold">
                
                
-               <%= session.getAttribute("MName") %>(<%= session.getAttribute("LoginID") %>)<br>
+               <%= session.getAttribute("MName") %>(<%= session.getAttribute("MLoginID") %>)<br>
                <button onclick="location.href='manageform.jsp'">설정</button>   <br>
                <button onclick="location.href='logout.jsp'">로그아웃</button></a>      
                </a>
