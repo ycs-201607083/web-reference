@@ -58,6 +58,7 @@ try{
     <tr><td>글 내용</td><td><p cols = "80" rows = "20" ><%=b_content%></p></td></tr>
   </table>
 	<input type="hidden" value="<%=id%>" name="title">
+	<input type="hidden" value="<%=type%>" name="type">
   </fieldset>
   <%
   if(name == null && manager == null){

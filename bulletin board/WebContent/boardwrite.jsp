@@ -37,6 +37,7 @@ String name = (String)session.getAttribute("Name");
 String manager = (String)session.getAttribute("MName");
 String id = request.getParameter("title");
 int i_id;
+String kind = request.getParameter("type");
 
 if(id == null)
 	i_id = 0;
@@ -112,18 +113,7 @@ if(name == null && manager == null){
 			}
 	
 	%>
-	<div class = "mar">
-	<select name="kind">
-	<option value = "none">게시할 게시판을 선택해주세요.</option>
-	<option value = "web">웹/앱</option>
-	<option value = "game">게임</option>
-	<option value = "net">네트워크</option>
-	<option value = "ai">인공지능</option>
-	<option value = "daily">일상 공유</option>
-	<option value = "code">코딩 공유</option>
-	<option value = "manger">관리자 게시판</option>
-	</select>
-	</div>
+
 	<table class="table">
 	<tr><th>제목</th><th><textarea class = "title" id = "title" name = "title" rows= "1"><%=b_title%></textarea>
 
@@ -132,6 +122,8 @@ if(name == null && manager == null){
     <tr><td>내용</td><td><textarea name = "content" cols = "80" rows = "20" ><%=b_content%></textarea></td></tr>
     <input type="hidden" value="1" name="update"/>
     <input type="hidden" value="<%=i_id%>" name="id"/>
+    <input type="hidden" value="<%=kind%>" name="kind"/>
+    
   </table> 
 	<%
 	}catch(SQLException ex){
