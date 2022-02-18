@@ -3,6 +3,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.lang.*" %>
 <%@ include file="top.jsp" %>
+<br><br>
 <!DOCTYPE>
 <html>
 <jsp:include page = "info.jsp" flush = "false"/>
@@ -191,6 +192,7 @@ case "manager" :
     
   </table> 
 </div>
+
 <%@ include file="category.jsp" %>
 <div style="display: inline-block; margin:  0px; float: right;">
 

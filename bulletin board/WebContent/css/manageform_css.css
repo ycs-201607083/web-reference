@@ -1,9 +1,10 @@
-/* AI.jsp 에서 사용하는 css */
+
 .table {
 	
 	border-collapse: collapse;
 	border-top: 3px solid #343A40;
 	height: 300px;
+	width : 800px;
 	padding: 50px;
 	table-layout: fixed;
 	
@@ -32,13 +33,31 @@
 	border-left: 0;
 }
 
-.table th:last-child, .table td:last-child {
-	border-right: 0;
+.table tr td:first-child , table tr th:first-child {
+	text-align: center;
+	width : 60px;
 }
 
-.table tr td:first-child {
+.table tr td:nth-child(2) , table tr th:nth-child(2){
 	text-align: center;
+	width : 50px;
 }
+
+.table tr td:nth-child(3) , table tr th:nth-child(3){
+	text-align: center;
+	width : 120px;
+}
+
+.table tr td:nth-child(5) , table tr th:nth-child(5){
+	text-align: center;
+	width : 100px;
+}
+
+.table tr td:last-child, .table tr th:last-child {
+	text-align: center;
+	width: 225px;
+}
+
 
 .table > .sticky > th {
 	position: sticky;
@@ -57,7 +76,7 @@
 
 form {
 	margin: 10px;
-	width: 75%;
+	width: 1000px;
 	display: table;
 	margin-left: auto;
 	margin-right: auto;
@@ -66,7 +85,6 @@ form {
 fieldset {
 	border: 2px solid #343A40;
 	padding: 10px;
-	margin: 10px;
 }
 
 .list {
