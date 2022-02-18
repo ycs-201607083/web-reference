@@ -70,14 +70,14 @@ if(name == null && manager == null){
    %>
    <div class = "mar">
    <select name="kind">
-   <option value = "none">&nbsp; 게시할 게시판을 선택해주세요.</option>
-   <option value = "web">&nbsp;웹/앱</option>
-   <option value = "game">&nbsp;게임</option>
-   <option value = "net">&nbsp;네트워크</option>
-   <option value = "ai">&nbsp;인공지능</option>
-   <option value = "daily">&nbsp;일상 공유</option>
-   <option value = "code">&nbsp;코딩 공유</option>
-   <option value = "manger">&nbsp;관리자 게시판</option>
+   <option value = "none"> &nbsp;게시할 게시판을 선택해주세요.</option>
+   <option value = "web"> &nbsp; 웹/앱</option>
+   <option value = "game"> &nbsp; 게임</option>
+   <option value = "net"> &nbsp; 네트워크</option>
+   <option value = "ai"> &nbsp; 인공지능</option>
+   <option value = "daily"> &nbsp;일상 공유</option>
+   <option value = "code"> &nbsp; 코딩 공유</option>
+   <option value = "manger"> &nbsp; 관리자 게시판</option>
    </select>
    </div>
    <table class="table">
@@ -117,14 +117,14 @@ if(name == null && manager == null){
    %>
    <div class = "mar">
    <select name="kind">
-   <option value = "none">게시할 게시판을 선택해주세요.</option>
-   <option value = "web">웹/앱</option>
-   <option value = "game">게임</option>
-   <option value = "net">네트워크</option>
-   <option value = "ai">인공지능</option>
-   <option value = "daily">일상 공유</option>
-   <option value = "code">코딩 공유</option>
-   <option value = "manger">관리자 게시판</option>
+   <option value = "none">&nbsp;게시할 게시판을 선택해주세요.</option>
+   <option value = "web">&nbsp;웹/앱</option>
+   <option value = "game">&nbsp;게임</option>
+   <option value = "net">&nbsp;네트워크</option>
+   <option value = "ai">&nbsp;인공지능</option>
+   <option value = "daily">&nbsp;일상 공유</option>
+   <option value = "code">&nbsp;코딩 공유</option>
+   <option value = "manger">&nbsp;관리자 게시판</option>
    </select>
    </div>
    
