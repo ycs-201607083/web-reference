@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* AI.jsp 에서 사용하는 css */
 
+.container{
+	border : 1px solid black;
+	min-width: 300px;
+	}
+
 .table {
       border-collapse: collapse;
       border-top: 3px solid #343A40;     
@@ -42,9 +47,7 @@ button {
 	margin-right:10px;
 	float:right;
 }
-form{
-margin : 10px;
-}
+
 
 fieldset { 
 border: 2px solid #343A40;
@@ -59,10 +62,6 @@ a, a:hover {
 
 }
 
-.infocate {
-	width : 200px;
-}
-.notice { 
-	width:800px;
-	left:500px;
+.fc {
+	display: flex;
 }

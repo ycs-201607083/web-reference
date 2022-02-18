@@ -11,7 +11,6 @@
 <br><br>
 <jsp:include page = "info.jsp" flush = "false"/>
 <jsp:include page = "notice.jsp" flush = "false"/>
-<jsp:include page = "category.jsp" flush = "false"/>
 
 </body>
 </html>

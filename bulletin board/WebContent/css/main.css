@@ -1,6 +1,9 @@
 .mainbatch1 {
-	display: flex;
-	border:0px;
+	display: inline-flex;
+	float: left;
+	justify-content: center;
+	padding-left: 400px;
+	padding-right: auto;
 }
 
 .mainbatch2 {

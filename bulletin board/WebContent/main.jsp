@@ -10,7 +10,12 @@ pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <title>main</title>
 <link href="css/main.css" type="text/css" rel = "stylesheet">
-
+<style>
+	.asd {
+	max-width: 100px;
+	min-width: 300px;
+	}
+</style>
 </head>
 <body>
 <!-- top 레이아웃 include -->
@@ -18,11 +23,13 @@ pageEncoding="UTF-8"%>
 <br><br>
 
 <div class="mainbatch1">
-<jsp:include page = "info.jsp" flush = "false"/>
-<jsp:include page = "notice.jsp" flush = "false"/>
+		<jsp:include page = "info.jsp" flush = "false"/>
+		<!--<jsp:include page = "category.jsp" flush = "false"/>-->
 
-<jsp:include page = "category.jsp" flush = "false"/>
-<jsp:include page = "newpost.jsp" flush = "false"/>	
+<table style="border:1px solid black;">
+	<tr><td><jsp:include page = "notice.jsp" flush = "false"/></td></tr>
+	<tr><td><jsp:include page = "newpost.jsp" flush = "false"/></td></tr>
+</table>	
 </div>
 
 </body>
