@@ -110,10 +110,7 @@ case "game" :
    name = "게임 팀";
    break;
 case "daily" :
-   name = "일상 공유";
-   break;
-case "fun" :
-   name = "유머 게시판";
+   name = "일상";
    break;
 case "manager" :
    name = "관리자";
