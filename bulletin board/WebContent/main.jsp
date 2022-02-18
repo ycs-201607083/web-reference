@@ -7,9 +7,10 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>main</title>
 <link href="css/main.css" type="text/css" rel = "stylesheet">
-<meta charset="UTF-8">
+
 </head>
 <body>
 <!-- top 레이아웃 include -->

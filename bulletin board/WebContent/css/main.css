@@ -1,9 +1,9 @@
 .mainbatch1 {
 	display: flex;
-	border:1px solid black;
+	border:0px;
 }
 
 .mainbatch2 {
 	display: flex;
-	border:1px solid black;
+	border:0px;
 }

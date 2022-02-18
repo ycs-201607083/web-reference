@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <link href="./css/boradwrite_css.css" type="text/css" rel = "stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<meta charset="UTF-8">
+
 <title>글 수정</title>
 </head>
 <body>

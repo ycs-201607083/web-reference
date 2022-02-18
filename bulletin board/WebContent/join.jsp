@@ -6,6 +6,7 @@
     
 <html>
 <head>
+<meta charset="UTF-8">
 
     <title>회원가입 화면</title>
     <script type="text/javascript">

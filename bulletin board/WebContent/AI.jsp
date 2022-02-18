@@ -6,6 +6,7 @@
 <br><br>
 <!DOCTYPE>
 <html>
+<meta charset="UTF-8">
 <jsp:include page = "info.jsp" flush = "false"/>
 <head>
 <style type="text/css">
