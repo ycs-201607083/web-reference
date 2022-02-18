@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.lang.*" %>
 <%@ include file="top.jsp" %>
 <!DOCTYPE>
 <html>
@@ -79,10 +80,20 @@ textarea {
 </head>
 
 <body>
+<%!
+double total; //게시판마다 게시글이 총 몇개인지 확인
+int board_num; //한페이지에 10개씩 몇 페이지 나오는지 확인 올림처리 
+%>
 
 <%
 String kind = (String)request.getParameter("kind");
 String name = "";
+String s_page = request.getParameter("page");
+int page_num;
+if(s_page == null)
+	page_num = 1;
+else
+	page_num = Integer.parseInt(s_page);
 
 switch(kind){
 
@@ -132,10 +143,23 @@ case "manager" :
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
-		String sql = "select boardid, title, boardtype, writer, wrdate from board where boardtype=? order by boardid desc limit 10";
+		String sql = "select count(*) from board where boardtype=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, kind);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()){
+			total = rs.getInt(1); //몇개인지 확인
+		}
+		int num = (int)total+1;
+		total = total/10;
+		board_num = (int)Math.ceil(total);
+		
+		//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
+		sql = "select boardid, title, boardtype, writer, wrdate from board where boardtype=? and boardid < ? order by boardid desc limit 10";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, kind);
+		pstmt.setInt(2, num-(page_num-1)*10);
 		rs = pstmt.executeQuery();
 		
 		//각각의 결과 레코드를 변수에 입력
@@ -149,7 +173,7 @@ case "manager" :
 		<td><a href="modify.jsp?id=<%=b_num%>&type=<%=kind%>"><%=b_title%></a></td>
 		<td><%=b_writer%></td>
 		<td><%=b_date%></td></tr>
-		<%
+		<%		
 		}
     }catch(SQLException ex){
     	ex.printStackTrace();
@@ -174,6 +198,13 @@ case "manager" :
 <div style="display: inline-block; margin:  0px; float: right;">
 
 <button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+<br>
+<%
+int i;
+for(i=1; i<=board_num; i++){
+%>
+<a href="AI.jsp?kind=<%=kind%>&page=<%=i%>"><%=i%></a>
+<%} %>
 </div>
 </body>
 </html>

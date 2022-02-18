@@ -19,6 +19,7 @@ String b_content = null; //게시글 내용
 String id = request.getParameter("id");
 String type = request.getParameter("type");
 String name = (String)session.getAttribute("Name");
+String manager = (String)session.getAttribute("MName");
 
 Connection conn = null;
 PreparedStatement pstmt = null;
@@ -59,7 +60,11 @@ try{
 	<input type="hidden" value="<%=id%>" name="title">
   </fieldset>
   <%
-	if(name==b_writer){
+  if(name == null){
+		name = manager;
+		b_writer = manager;
+  }
+	if(name.equals(b_writer) || manager == "admin"){
 		 %>
 
 	 <button type="submit" class="btn1">현재 글 수정</button>
@@ -68,7 +73,7 @@ try{
 	 </form>
 	 <%
 	}
-  	else if(name != b_writer){
+  	else if(!name.equals(b_writer) || manager == null){
   		%>
   		 <button type="button" class="btn1" onclick="javascript:history.back()">이전 글 목록</button>
   		 <%
