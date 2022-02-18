@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
-
     <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="./css/boradwrite_css.css" type="text/css" rel = "stylesheet">
+<link href="css/boardwrite_css.css" type="text/css" rel = "stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -50,16 +48,18 @@ try{
 
 %>
 <jsp:include page = "top.jsp" flush = "false"/>
+
+<br><br>
+
 <form action="boardwrite.jsp" method="post">
 	<fieldset>
 	
-	<table class="table">
-	<tr><th>제목</th><th><p rows= "1" style="font-weight:500"><%=b_title%></p>
-</th></tr>
-	<tr><td>작성자</td><td><p><%=b_writer%></p></td></tr>
-	 
-    <tr><td>글 내용</td><td><p cols = "80" rows = "20" ><%=b_content%></p></td></tr>
+	<table class="tablemd" style=" margin: 20px 20px;" %>
+	<tr><th>제목</th><th><p rows= "1" style="font-weight:500"><%=b_title%></p></th></tr>
+	<tr><td>작성자</td><td><p><%=b_writer%></p></td></tr>	 
+    <tr style="height: 300px;"><td colspan="2"><p cols = "80" rows = "20" ><%=b_content%></p></td></tr>
   </table>
+  
 	<input type="hidden" value="<%=id%>" name="title">
 	<input type="hidden" value="<%=type%>" name="type">
   </fieldset>

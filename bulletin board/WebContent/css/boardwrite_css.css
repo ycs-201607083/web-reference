@@ -31,6 +31,60 @@
    text-align: left;
 }
 
+/*---------------------modify table styles---------------------*/
+
+.tablemd {
+   border-collapse: collapse;
+   width : 95%; 
+   border: 1px solid #ddd;
+}
+
+.tablemd th {
+   color: #343A40;
+   background: #D6EEF2;
+   
+}
+
+.tablemd th, .table td {
+   padding: 10px;
+   border: 1px solid #ddd;
+}
+
+.tablemd th:first-child, .table td:first-child {
+   border-left: 0;   
+   text-align: center;
+   width:100px;
+}
+
+
+
+.tablemd tr td:first-child  {
+   text-align: center;
+   border: 1px solid #ddd;
+   height: 25px;
+}
+
+.tablemd tr:nth-child(2) td:last-child{
+   padding : 10px;
+   text-align: left;
+   border: 1px solid #ddd;
+}
+.tablemd tr:last-child td:last-child{
+   padding : 20px;
+   text-align: left;
+   vertical-align :top;
+   border: 1px solid #ddd;
+}
+
+.tablemd tr th:last-child {
+   text-align: left;
+}
+
+
+   
+
+
+/*------------*/
 button {
 	border: 0.5px solid #343A40;
 	width: 150px;
@@ -43,6 +97,13 @@ button {
 }
 
 .btnB {
+   border-radius: 100px;
+   margin-bottom:20px;
+   margin-right:10px;
+   float:right;
+}
+
+.btn1 {
    border-radius: 100px;
    margin-bottom:20px;
    margin-right:10px;
