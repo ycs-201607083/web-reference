@@ -5,7 +5,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.lang.*" %>
 <%@ include file="top.jsp" %>
-<br><br>
 <!DOCTYPE>
 <html>
 <jsp:include page = "info.jsp" flush = "false"/>
@@ -55,6 +54,12 @@
 	margin-right:10px;
 	float:right;
 }
+
+.number {
+	text-decoration: none;
+	color:#000000;
+}
+
 form{
 
 	 margin : 10px;
@@ -157,10 +162,11 @@ case "notice" :
 		board_num = (int)Math.ceil(total);
 		
 		//sql문으로 db에 번호, 제목, 작성자, 종류, 날짜 검색
-		sql = "select boardid, title, boardtype, writer, wrdate from board where boardtype=? and boardid < ? order by boardid desc limit 10";
+		sql = "select boardid, title, boardtype, writer, wrdate from board where boardtype=? order by boardid desc limit ?,?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, kind);
-		pstmt.setInt(2, num-(page_num-1)*10);
+		pstmt.setInt(2, (page_num-1)*10);
+		pstmt.setInt(3, 10);
 		rs = pstmt.executeQuery();
 		
 		//각각의 결과 레코드를 변수에 입력
@@ -196,12 +202,23 @@ case "notice" :
   </table> 
 </div>
 <%@ include file="category.jsp" %>
+<%
+int i;
+%>
+<div style="display: inline-block; margin:auto; align-items: center;">
+<br>
+<%
+for(i=1; i<=board_num; i++){
+%>
+<a href="AI.jsp?kind=<%=kind%>&page=<%=i%>" class="number" style="margin: 20px;"><%=i%></a>
+<%} %>
+</div>
 <div style="display: inline-block; margin:  0px; float: right;">
 <%
 if(name == "공지사항"){
 	if(manager != null){
 		%>
-		<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+		<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp?kind=<%=kind%>'">게시글 작성</button>
 		<%
 	}
 	else{
@@ -209,14 +226,10 @@ if(name == "공지사항"){
 		}
 }else{
 	%>
-<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp'">게시글 작성</button>
+<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp?kind=<%=kind%>'">게시글 작성</button>
 <%
 }
-int i;
-for(i=1; i<=board_num; i++){
 %>
-<a href="AI.jsp?kind=<%=kind%>&page=<%=i%>"><%=i%></a>
-<%} %>
 </div>
 </body>
 </html>
