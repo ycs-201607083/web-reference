@@ -27,6 +27,8 @@
 <% 
 String master = (String)session.getAttribute("MLoginID");
 String student = (String)session.getAttribute("LoginID");
+
+//	로그인을 하지 않은 상태
 if(master==null && student==null)
 {
 %>
@@ -46,6 +48,7 @@ if(master==null && student==null)
 
 
 <%}
+//	사용자가 로그인을 한 상태
 else if(master==null)
 { 
 %>
@@ -67,6 +70,7 @@ else if(master==null)
 </div>
 <% 
 }
+//	관리자가 로그인을 한 상태
 else
 { 
 %>

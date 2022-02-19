@@ -5,6 +5,7 @@
 <html>
 <head>
 <style>
+/* 배경 워터마크의 크기와 위치 조정 */
 body{
 background-image: url('bg_yuhanlogo.png');
 background-attachment: fixed;
@@ -27,7 +28,7 @@ background-position: 60% 40%;
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-         <img src="bn_reflogo.png" width=150px; height=50px;>
+         <img src="bn_reflogo.png" width=150px; height=40px;>
          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                <li class="nav-item active"><a class="nav-link" href="main.jsp">홈
@@ -36,6 +37,7 @@ background-position: 60% 40%;
             <% 
             String master = (String)session.getAttribute("MLoginID");
             String student = (String)session.getAttribute("LoginID");
+            //	로그인을 하지 않은 상태
             if(master==null && student==null)
             {
             %>
@@ -49,6 +51,5 @@ background-position: 60% 40%;
             </ul>
          </div>
       </div>
-</div>
    </nav>
    
