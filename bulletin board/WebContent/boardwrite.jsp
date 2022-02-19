@@ -37,9 +37,34 @@
 <body class="pt-5">
 
 <%
-String name = (String)session.getAttribute("Name");
-String manager = (String)session.getAttribute("MName");
-String id = request.getParameter("title");
+String name = (String)session.getAttribute("Name");  //로그인한 사람의 이름
+String manager = (String)session.getAttribute("MName");  //관리자의 이름
+String id = request.getParameter("title");  //modify.jsp에서 글 수정버튼 누를 때 현재 게시글의 boardid값
+String kind = request.getParameter("kind");  //게시판 종류
+String board_name="";
+
+switch(kind){
+
+case "web" :
+   board_name = "웹/앱";
+   break;
+case "ai" :
+   board_name = "인공지능";
+   break;
+case "net" :
+   board_name = "네트워크";
+   break;
+case "game" :
+   board_name = "게임";
+   break;
+case "daily" :
+   board_name = "일상";
+   break;
+case "notice" :
+	board_name = "공지사항";
+	break;
+}
+
 int i_id;
 
 if(id == null)
@@ -61,29 +86,16 @@ if(name == null && manager == null){
 <!-- Navigation -->
 <jsp:include page = "top.jsp" flush = "false"/>      
       <br>
-<form action="writeOK.jsp" method="post" onsubmit="return ContentCheck()" name="write">
+<form action="writeOK.jsp?kind=<%=kind%>" method="post" onsubmit="return ContentCheck()" name="write">
 
    <fieldset>
    <div class = "board_position">
    <h3>&nbsp;게시글 작성</h3>
-   
    <%
    if(i_id == 0){
    %>
-   <div class = "mar">
-   <select name="kind">
-   <option value = "none"> &nbsp;게시할 게시판을 선택해주세요.</option>
-   <option value = "web"> &nbsp; 웹/앱</option>
-   <option value = "game"> &nbsp; 게임</option>
-   <option value = "net"> &nbsp; 네트워크</option>
-   <option value = "ai"> &nbsp; 인공지능</option>
-   <option value = "daily"> &nbsp;일상 공유</option>
-   <option value = "code"> &nbsp; 코딩 공유</option>
-   <option value = "manger"> &nbsp; 관리자 게시판</option>
-   </select>
-   </div>
-
    <table class="table">
+   <tr><th colspan="2" style="text-align:center"><%=board_name%></th></tr>
    <tr><th>제목</th>
    <th><textarea class = "title" id = "title" name = "title" placeholder= "제목을 입력해주세요." cols = "100" ></textarea>
 </th></tr>
@@ -118,28 +130,15 @@ if(name == null && manager == null){
          }
    
    %>
-   <div class = "mar">
-   <select name="kind">
-   <option value = "none">&nbsp;게시할 게시판을 선택해주세요.</option>
-   <option value = "web">&nbsp;웹/앱</option>
-   <option value = "game">&nbsp;게임</option>
-   <option value = "net">&nbsp;네트워크</option>
-   <option value = "ai">&nbsp;인공지능</option>
-   <option value = "daily">&nbsp;일상 공유</option>
-   <option value = "code">&nbsp;코딩 공유</option>
-   <option value = "manger">&nbsp;관리자 게시판</option>
-   </select>
-   </div>
-   
    <table class="table">
+   <tr><th colspan="2" style="text-align:center"><%=board_name%></th></tr>
    <tr><th>제목</th><th><textarea class = "title" id = "title" name = "title" rows= "1"><%=b_title%></textarea>
 </th></tr>
    
     <tr><td>내용</td><td><textarea name = "content" rows = "20" ><%=b_content%></textarea></td></tr>
-    <input type="hidden" value="1" name="update"/>
-    <input type="hidden" value="<%=i_id%>" name="id"/>
   </table> 
- 
+ 	<input type="hidden" value="1" name="update">
+   <input type="hidden" value="<%=i_id%>" name="id">
   
    <%
    }catch(SQLException ex){

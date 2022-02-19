@@ -18,8 +18,8 @@
     if(check == null)
     	i_check = 0;
     else
-    	
     	i_check = Integer.parseInt(check);
+    
     int i;
     
     if(writer == null && manager == null){
@@ -59,9 +59,9 @@
 
 		%>
 		<script>
-		var check = <%=check%>;
+		var check = <%=i_check%>;
 		if(check == 0)
-    		location.href="AI.jsp?kind=type";
+    		location.href="AI.jsp?kind=<%=type%>";
 		else
 			location.href="manageform.jsp";
     	</script>

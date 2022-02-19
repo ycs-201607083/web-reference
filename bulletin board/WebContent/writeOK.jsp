@@ -12,8 +12,8 @@
 <body>
 <%
 //boardwrite.jsp에서 POST로 받아온 값
-String kind = request.getParameter("kind");
 String title = request.getParameter("title");
+String kind = request.getParameter("kind");
 String content = request.getParameter("content");
 String name = (String)session.getAttribute("Name");
 Timestamp register = new Timestamp(System.currentTimeMillis());
@@ -28,6 +28,8 @@ else
 if(name == null)
 	name = "manager";
 
+%>
+<%
 //DB연결
 Connection conn = null;
 PreparedStatement pstmt = null;

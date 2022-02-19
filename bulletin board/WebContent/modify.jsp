@@ -14,7 +14,6 @@
 </head>
 <body>
 <%
-
 String b_title = null; //게시글 제목
 String b_writer = null; //작성자
 String b_content = null; //게시글 내용
@@ -61,7 +60,7 @@ try{
     <tr><td>글 내용</td><td><p cols = "80" rows = "20" ><%=b_content%></p></td></tr>
   </table>
 	<input type="hidden" value="<%=id%>" name="title">
-	<input type="hidden" value="<%=type%>" name="type">
+	<input type="hidden" value="<%=type%>" name="kind">
   </fieldset>
   <%
   if(name == null && manager == null){
