@@ -39,30 +39,6 @@
 String name = (String)session.getAttribute("Name");
 String manager = (String)session.getAttribute("MName");
 String id = request.getParameter("title");
-String kind = request.getParameter("kind");
-String kind_name="";
-
-switch(kind){
-
-case "web" :
-   kind_name = "웹/앱";
-   break;
-case "ai" :
-   kind_name = "인공지능";
-   break;
-case "net" :
-   kind_name = "네트워크";
-   break;
-case "game" :
-   kind_name = "게임";
-   break;
-case "daily" :
-   kind_name = "일상";
-   break;
-case "notice" :
-	   kind_name = "공지사항";
-	   break;
-}
 int i_id;
 
 if(id == null)
@@ -87,20 +63,32 @@ if(name == null && manager == null){
 <form action="writeOK.jsp" method="post" onsubmit="return ContentCheck()" name="write">
 
    <fieldset>
-   <h3>&nbsp;게시글 작성</h3>   
-   <hr>
+   <div class = "board_position">
+   <h3>&nbsp;게시글 작성</h3>
+   
    <%
    if(i_id == 0){
    %>
-   
-   <table class="table">
-   <tr><th colspan="2"><h4 style="text-align:center"><%=kind_name%></h4></th></tr>
-   <tr><th>제목</th><th><textarea class = "title" id = "title" name = "title" placeholder= "제목을 입력해주세요." cols = "100" ></textarea>
+   <div class = "mar">
+   <select name="kind">
+   <option value = "none"> &nbsp;게시할 게시판을 선택해주세요.</option>
+   <option value = "web"> &nbsp; 웹/앱</option>
+   <option value = "game"> &nbsp; 게임</option>
+   <option value = "net"> &nbsp; 네트워크</option>
+   <option value = "ai"> &nbsp; 인공지능</option>
+   <option value = "daily"> &nbsp;일상 공유</option>
+   <option value = "code"> &nbsp; 코딩 공유</option>
+   <option value = "manger"> &nbsp; 관리자 게시판</option>
+   </select>
+   </div>
 
+   <table class="table">
+   <tr><th>제목</th>
+   <th><textarea class = "title" id = "title" name = "title" placeholder= "제목을 입력해주세요." cols = "100" ></textarea>
 </th></tr>
-   
-    <tr><td>내용</td><td><textarea  placeholder="내용을 입력하세요." name = "content" cols = "80" rows = "20" ></textarea></td></tr>
-  </table> 
+    <tr><td>내용</td><td><textarea  placeholder="내용을 입력하세요." name = "content" cols = "60" rows = "20" ></textarea></td></tr>
+  </table>
+  
   <%
    }else{
    
@@ -128,18 +116,30 @@ if(name == null && manager == null){
             b_num = rs.getString("boardid");
          }
    
-   %>   
+   %>
+   <div class = "mar">
+   <select name="kind">
+   <option value = "none">&nbsp;게시할 게시판을 선택해주세요.</option>
+   <option value = "web">&nbsp;웹/앱</option>
+   <option value = "game">&nbsp;게임</option>
+   <option value = "net">&nbsp;네트워크</option>
+   <option value = "ai">&nbsp;인공지능</option>
+   <option value = "daily">&nbsp;일상 공유</option>
+   <option value = "code">&nbsp;코딩 공유</option>
+   <option value = "manger">&nbsp;관리자 게시판</option>
+   </select>
+   </div>
+   
    <table class="table">
-   <tr><th colspan="2"><h4 style="text-align:center"><%=kind_name%></h4></th></tr>
    <tr><th>제목</th><th><textarea class = "title" id = "title" name = "title" rows= "1"><%=b_title%></textarea>
-
 </th></tr>
    
-    <tr><td>내용</td><td><textarea name = "content" cols = "80" rows = "20" ><%=b_content%></textarea></td></tr>
+    <tr><td>내용</td><td><textarea name = "content" rows = "20" ><%=b_content%></textarea></td></tr>
     <input type="hidden" value="1" name="update"/>
-    <input type="hidden" value=<%=i_id%> name="id"/>
-    
+    <input type="hidden" value="<%=i_id%>" name="id"/>
   </table> 
+ 
+  
    <%
    }catch(SQLException ex){
       ex.printStackTrace();
@@ -158,12 +158,12 @@ if(name == null && manager == null){
       }
    }
    %>
-  </fieldset>
-   
-   <input type="hidden" value=<%=kind%> name="kind"/>
+   <div class = "button_location">
    <button type="submit" class="btnB">게시글 작성</button>
-   <button type="button" class="btnB" onclick="javascript:location.href='AI.jsp?kind=<%=kind%>'">취소</button>&nbsp;
+   <button type="button" class="btnB" onclick="javascript:history.back()">취소</button>&nbsp;
+    </div>
+    </div>
+  </fieldset>
    </form>
-  
 </body>
 </html>

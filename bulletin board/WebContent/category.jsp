@@ -11,9 +11,9 @@
 </head>
 <body>
 
-	<div class="col-lg-3 intocate">
-        <ui class="mainMenu">
-        
+	<div class="col-lg-3">
+
+        <ul class="mainMenu">
         	 <li class="item">
                 <a href="AI.jsp?kind=notice" class="btnC"><i class="fas fa-sign-out-alt"></i>공지사항</a>
             </li>
@@ -34,10 +34,7 @@
                     <a href="AI.jsp?kind=net">네트워크</a>
                 </div>
             </li>
-           
-           
-           
-        </ui>
+        </ul>
     </div>
 </body>
 </html>

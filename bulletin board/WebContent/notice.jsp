@@ -68,7 +68,7 @@
 		}
 	%>
   </table> 
-<a href="AI.jsp?kind=notice" class="" style="padding-left: 47em">전체보기</a>
+<a href="AI.jsp?kind=notice" class="" style="padding-left: 49em">전체보기</a>
 	</div>
 </body>
 </html>

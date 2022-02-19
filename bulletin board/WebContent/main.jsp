@@ -11,10 +11,7 @@ pageEncoding="UTF-8"%>
 <title>main</title>
 <link href="css/main.css" type="text/css" rel = "stylesheet">
 <style>
-	.asd {
-	max-width: 100px;
-	min-width: 300px;
-	}
+
 </style>
 </head>
 <body>

@@ -10,9 +10,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	body {
+		padding: 0px;
+	}
 	.asd {
 	max-width: 100px;
-	min-width: 300px;
+	min-width: 250px;
 	}
 	
 	.col-lg-3 {
@@ -46,7 +49,7 @@ if(master==null && student==null)
 else if(master==null)
 { 
 %>
-   <div class="container" margin-right=20px>
+   <div class="container asd">
       <div class="column">
          <div class="col-lg-3">
             <div class="list-group mb-4">
@@ -67,7 +70,7 @@ else if(master==null)
 else
 { 
 %>
-   <div class="container" margin-right=20px>
+   <div class="container asd">
       <div class="column">
          <div class="col-lg-3">
             <div class="list-group mb-4">

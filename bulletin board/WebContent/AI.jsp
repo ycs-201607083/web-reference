@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
-
 <%@ page import="java.sql.*" %>
 <%@ page import="java.lang.*" %>
-<%@ include file="top.jsp" %>
 <!DOCTYPE>
 <html>
-<jsp:include page = "info.jsp" flush = "false"/>
 <head>
 <style type="text/css">
 .tableA {
@@ -85,9 +82,11 @@ textarea {
 
 </style>
 <title>레퍼런스 웹/앱팀</title>
+<link href="css/board.css" type="text/css" rel = "stylesheet">
 </head>
 
 <body>
+<jsp:include page = "top.jsp" flush = "false"/>
 <%!
 double total; //게시판마다 게시글이 총 몇개인지 확인
 int board_num; //한페이지에 10개씩 몇 페이지 나오는지 확인 올림처리 
@@ -126,13 +125,16 @@ case "notice" :
 	   break;
 }
 %>
-
+<!-- 전체를 정렬할 container -->
+<div class = "sort-main">
+<jsp:include page = "info.jsp" flush = "false"/>
+<!-- 게시판과 페이지 버튼 게시글 작성을 정렬할 container -->
+<div class = "sort-block">
 <div class="list">
 
    <legend> <%=name %> 게시판</legend>   
    <table class="tableA">
    <tr><th>No.</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
-   </th>
     <%
     String b_num = null; //게시글 번호
     String b_title = null; //게시글 제목
@@ -201,35 +203,36 @@ case "notice" :
     
   </table> 
 </div>
-<%@ include file="category.jsp" %>
 <%
 int i;
 %>
-<div style="display: inline-block; margin:auto; align-items: center;">
-<br>
-<%
-for(i=1; i<=board_num; i++){
-%>
-<a href="AI.jsp?kind=<%=kind%>&page=<%=i%>" class="number" style="margin: 20px;"><%=i%></a>
-<%} %>
-</div>
-<div style="display: inline-block; margin:  0px; float: right;">
-<%
-if(name == "공지사항"){
-	if(manager != null){
-		%>
-		<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp?kind=<%=kind%>'">게시글 작성</button>
-		<%
-	}
-	else{
-			
-		}
-}else{
+	<div style="display: inline-block; margin:auto; align-items: center;">
+	<br>
+	<%
+	for(i=1; i<=board_num; i++){
 	%>
-<button type="buttonA" class="btnA" style="float:right;" onclick="location.href='boardwrite.jsp?kind=<%=kind%>'">게시글 작성</button>
-<%
-}
-%>
+	<a href="AI.jsp?kind=<%=kind%>&page=<%=i%>" class="number" style="margin: 20px;"><%=i%></a>
+	<%} %>
+	</div>
+		<div style="display: inline-block; margin:  0px; float: right;">
+		<%
+		if(name == "공지사항"){
+			if(manager != null){
+				%>
+				<button type="button" class="buttonA" style="float:right;" onclick="location.href='boardwrite.jsp?kind=<%=kind%>'">게시글 작성</button>
+				<%
+			}
+			else{
+					
+				}
+		}else{
+			%>
+		<button type="button" class="buttonA" style="float:right;" onclick="location.href='boardwrite.jsp?kind=<%=kind%>'">게시글 작성</button>
+		<%
+		}
+		%>
+		</div>
+</div>
 </div>
 </body>
 </html>
