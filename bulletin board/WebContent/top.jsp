@@ -27,23 +27,28 @@ background-position: 60% 40%;
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-         <a class="navbar-brand" href="main.jsp">웹페이지</a>
+         <img src="bn_reflogo.png" width=150px; height=50px;>
          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                <li class="nav-item active"><a class="nav-link" href="main.jsp">홈
                      <span class="sr-only">(current)</span>
                </a></li>
-            
+            <% 
+            String master = (String)session.getAttribute("MLoginID");
+            String student = (String)session.getAttribute("LoginID");
+            if(master==null && student==null)
+            {
+            %>
                <li class="nav-item"><a class="nav-link"
                   href="login.jsp">로그인</a></li>
                <li class="nav-item"><a class="nav-link"
                   href="join.jsp">회원가입</a></li>
-               
-               
+            <%
+            }
+            %>
             </ul>
          </div>
       </div>
-      <div class="box">
 </div>
    </nav>
    

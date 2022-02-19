@@ -57,6 +57,7 @@
 					</div>
 				</div>
 			</form>
+			</div>
 	</section>
 
 </body>
