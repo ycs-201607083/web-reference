@@ -18,6 +18,7 @@
     if(check == null)
     	i_check = 0;
     else
+    	
     	i_check = Integer.parseInt(check);
     int i;
     

@@ -14,6 +14,7 @@
 </head>
 <body>
 <%
+
 String b_title = null; //게시글 제목
 String b_writer = null; //작성자
 String b_content = null; //게시글 내용

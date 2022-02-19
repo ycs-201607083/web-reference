@@ -41,6 +41,7 @@ try{
 	conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	
 	if(check==null){
+		
 	//SQL문으로 게시글 내용 및 날짜 등 DB에 입력
 	String sql = "insert into board(title,boardtype,writer,wrdate,wrcontent) values(?,?,?,?,?)";
 	pstmt = conn.prepareStatement(sql);

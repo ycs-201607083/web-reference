@@ -216,6 +216,7 @@ int i;
 	</div>
 		<div style="display: inline-block; margin:  0px; float: right;">
 		<%
+		
 		if(name == "공지사항"){
 			if(manager != null){
 				%>

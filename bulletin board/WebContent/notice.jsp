@@ -28,6 +28,7 @@
 	ResultSet rs = null;
 	String sql;
 	try{
+		
 		String jdbcUrl = "jdbc:mysql://localhost:3306/web_ref_db?useUnicode=yes&characterEncoding=UTF8";
 		String dbId = "admin";
 		String dbPass = "password";
