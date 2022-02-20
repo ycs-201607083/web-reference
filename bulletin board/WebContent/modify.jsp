@@ -54,7 +54,7 @@ try{
 	<fieldset>
 	<div class = "board_position">
 	<div style = "margin-top:20px;">
-	<h3>&nbsp;수정된 게시글</h3>
+	<h3>&nbsp;작성 게시글</h3>
 	</div>
 	<table class="table">
 	<tr><th>제목</th><th><p rows= "1" style="font-weight:500"><%=b_title%></p>
