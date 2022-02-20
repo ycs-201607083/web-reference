@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="./css/boradwrite_css.css" type="text/css" rel = "stylesheet">
+<link href="css/boardwrite_css.css" type="text/css" rel = "stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -50,8 +50,12 @@ try{
 %>
 <jsp:include page = "top.jsp" flush = "false"/>
 <form action="boardwrite.jsp" method="post">
-	<fieldset>
 	
+	<fieldset>
+	<div class = "board_position">
+	<div style = "margin-top:20px;">
+	<h3>&nbsp;수정된 게시글</h3>
+	</div>
 	<table class="table">
 	<tr><th>제목</th><th><p rows= "1" style="font-weight:500"><%=b_title%></p>
 </th></tr>
@@ -61,7 +65,7 @@ try{
   </table>
 	<input type="hidden" value="<%=id%>" name="title">
 	<input type="hidden" value="<%=type%>" name="kind">
-  </fieldset>
+  
   <%
   if(name == null && manager == null){
 		name = "name";
@@ -99,5 +103,7 @@ try{
 	}
 	}
   %>
+  </div>
+  </fieldset>
 </body>
 </html>
