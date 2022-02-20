@@ -58,7 +58,8 @@ else if(master==null)
             <div class="list-group mb-4">
                <a class="list-group-item list-group-item-info text-center font-weight-bold">개인 정보</a>
                <a class="list-group-item list-group-item-action text-center font-weight-bold">
-               
+               <!-- 프로필넣기 -->
+               <img src="human.png" width="100px" height="100px"><br>
                학번 : <%= session.getAttribute("StdID") %><br>
                <%= session.getAttribute("Name") %>(<%= session.getAttribute("LoginID") %>)  <br>
                <button onclick="location.href='logout.jsp'">로그아웃</button></a>   
@@ -81,7 +82,8 @@ else
                <a class="list-group-item list-group-item-info text-center font-weight-bold">개인 정보</a>
                <a class="list-group-item list-group-item-action text-center font-weight-bold">
                
-               
+               <!-- 프로필넣기 -->
+               <img src="human.png" width="100px" height="100px"><br>
                <%= session.getAttribute("MName") %>(<%= session.getAttribute("MLoginID") %>)<br>
                <button onclick="location.href='manageform.jsp'">설정</button>   <br>
                <button onclick="location.href='logout.jsp'">로그아웃</button></a>      
